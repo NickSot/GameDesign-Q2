@@ -50,13 +50,8 @@ public class DragAndDropController : MonoBehaviour
                 else if (obj.GetComponent<OutputPort>() != null)
                 {
                     outputPortBeingHeld = obj.GetComponent<OutputPort>();
-                    if (outputPortBeingHeld.connectedInputPort != null)
-                    {
-                        inputPortBeingHeld = outputPortBeingHeld.connectedInputPort;
-                        outputPortBeingHeld.connectedInputPort.connectedOutputPort = null;
-                        outputPortBeingHeld.connectedInputPort = null;
-                        outputPortBeingHeld = null;
-                    }
+                } else if (obj.GetComponent<CustomButton>() != null) {
+                    obj.GetComponent<CustomButton>().OnClick();
                 }
             }
         }
@@ -83,6 +78,10 @@ public class DragAndDropController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            GameObject obj = SenseObject();
+            if (SenseObject() == null) {
+                lr.SetVertexCount(0);
+            }
             if (componentBeingHeld != null)
             {
                 componentBeingHeld.transform.position = new Vector3(componentBeingHeld.transform.position.x, componentBeingHeld.transform.position.y, 0f);
@@ -91,7 +90,6 @@ public class DragAndDropController : MonoBehaviour
             else if (inputPortBeingHeld != null)
             {
                 lr.SetVertexCount(0);
-                GameObject obj = SenseObject();
                 if (obj != null && obj.GetComponent<OutputPort>() != null)
                 {
                     inputPortBeingHeld.GetComponent<InputPort>().connectedOutputPort = obj.GetComponent<OutputPort>();
@@ -102,11 +100,13 @@ public class DragAndDropController : MonoBehaviour
             else if (outputPortBeingHeld != null)
             {
                 lr.SetVertexCount(0);
-                GameObject obj = SenseObject();
-                if (obj != null && obj.GetComponent<InputPort>() != null)
+                if (obj != null)
                 {
-                    obj.GetComponent<InputPort>().connectedOutputPort = outputPortBeingHeld;
-                    outputPortBeingHeld.connectedInputPort = obj.GetComponent<InputPort>();
+                    if (obj.GetComponent<InputPort>() != null)
+                    {
+                        obj.GetComponent<InputPort>().connectedOutputPort = outputPortBeingHeld;
+                        outputPortBeingHeld.connectedInputPort = obj.GetComponent<InputPort>();
+                    }
                 }
                 outputPortBeingHeld = null;
             }

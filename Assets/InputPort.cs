@@ -3,24 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputPort : MonoBehaviour
+public class InputPort : Port
 {
     [HideInInspector] public OutputPort connectedOutputPort;
 
-    [SerializeField] float lineWidth;
+    [SerializeField] private Material activeLine;
+    [SerializeField] private Material inactiveLine;
+
     LineRenderer lr;
 
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
-        lr.startWidth = lineWidth;
-        lr.endWidth = lineWidth;
     }
 
     private void Update()
     {
         if (connectedOutputPort != null)
         {
+            currentValue = connectedOutputPort.currentValue;
+            if (currentValue) {
+                lr.material = activeLine;
+            } else {
+                lr.material = inactiveLine;
+            }
             Vector3 connectedPortPos = connectedOutputPort.gameObject.transform.position;
             lr.SetVertexCount(2);
             lr.SetPosition(0, new Vector3(transform.position.x, transform.position.y, -0.9f));
@@ -29,6 +35,7 @@ public class InputPort : MonoBehaviour
         else
         {
             lr.SetVertexCount(0);
+            currentValue = false;
         }
     }
 }
