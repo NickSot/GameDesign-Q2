@@ -6,4 +6,5 @@ using UnityEngine.EventSystems;
 
 public class Component : MonoBehaviour
 {
+    
 }
