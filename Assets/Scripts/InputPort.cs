@@ -17,7 +17,7 @@ public class InputPort : MonoBehaviour
         lr.endWidth = lineWidth;
     }
 
-    private void Update()
+    public void Update()
     {
         if (connectedOutputPort != null)
         {
@@ -25,6 +25,7 @@ public class InputPort : MonoBehaviour
             lr.SetVertexCount(2);
             lr.SetPosition(0, new Vector3(transform.position.x, transform.position.y, -0.9f));
             lr.SetPosition(1, new Vector3(connectedPortPos.x, connectedPortPos.y, -0.9f));
+        
         }
         else
         {
