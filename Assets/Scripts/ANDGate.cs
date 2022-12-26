@@ -12,7 +12,7 @@ public class ANDGate : Component
     public GameObject IPort2;
     private int getValue1;
     private int getValue2;
-    public int output;
+    [HideInInspector] public int output;
 
     void Awake()
     {

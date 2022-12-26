@@ -123,17 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &29921266 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3467326126206227856, guid: 6c1fdcf8eef740647bd073536f155d59, type: 3}
-  m_PrefabInstance: {fileID: 1237739488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &29921267 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3467326126206227859, guid: 6c1fdcf8eef740647bd073536f155d59, type: 3}
   m_PrefabInstance: {fileID: 1237739488}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29921266}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f17e32b1d2642b242a9c873ea27cc12b, type: 3}
@@ -448,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1964337336931254135, guid: 45761f7a70a040b18b51edbb0383cde2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 511
+      value: 472
       objectReference: {fileID: 0}
     - target: {fileID: 1964337336931254135, guid: 45761f7a70a040b18b51edbb0383cde2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -578,6 +573,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6499023cc602d6d4ca17c1fbe47971e2, type: 3}
+    - target: {fileID: 9211409901116363471, guid: 45761f7a70a040b18b51edbb0383cde2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211409901116363471, guid: 45761f7a70a040b18b51edbb0383cde2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1261225771
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3607821672313120448, guid: 45761f7a70a040b18b51edbb0383cde2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45761f7a70a040b18b51edbb0383cde2, type: 3}
@@ -603,8 +606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed66a48634387b64e8c57ec1a64cea76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 841642719}
-  button2: {fileID: 29921266}
   IPort1: {fileID: 1342149780}
   IPort2: {fileID: 460753539}
   output: 0
@@ -878,11 +879,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740962885}
   m_CullTransparentMesh: 1
---- !u!1 &841642719 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3467326126206227856, guid: 6c1fdcf8eef740647bd073536f155d59, type: 3}
-  m_PrefabInstance: {fileID: 2002194612}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &926937965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6640980918869307389, guid: d527a580cd4995e69817b44d21054496, type: 3}
@@ -1741,8 +1737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117bcb9afed2ecc4bb0727ad194c15c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button1: {fileID: 841642719}
-  button2: {fileID: 29921266}
   IPort1: {fileID: 1637221473}
   IPort2: {fileID: 1820938878}
   output: 0
@@ -2448,7 +2442,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1261225771
   m_SortingLayer: 1
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -2529,7 +2523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951496364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 126.3, y: 53.7, z: 0.039528973}
+  m_LocalPosition: {x: 349, y: 149, z: 0.039528973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2606,7 +2600,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3467326126206227859, guid: 6c1fdcf8eef740647bd073536f155d59, type: 3}
   m_PrefabInstance: {fileID: 2002194612}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841642719}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f17e32b1d2642b242a9c873ea27cc12b, type: 3}

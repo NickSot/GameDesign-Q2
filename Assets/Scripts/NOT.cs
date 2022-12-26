@@ -8,7 +8,7 @@ public class NOT : Component
     InputPort input;
     public GameObject IPort;
     private int getValue;
-    public int output;
+    [HideInInspector] public int output;
     void Awake()
     {
         input = IPort.GetComponent<InputPort>();
