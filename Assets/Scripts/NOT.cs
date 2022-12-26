@@ -1,30 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NOT : Component
 {
-    private static string x = "xx";
-    private static int getValue;
+    Switch switchValue;
+    InputPort input;
+    public GameObject button;
+    public GameObject IPort;
+    private int getValue;
     private int output;
-    void Start()
+    void Awake()
     {
-       
+        switchValue = button.GetComponent<Switch>();
+        input = IPort.GetComponent<InputPort>();
 
     }
 
     void Update()
     {
-        getValue = PlayerPrefs.GetInt(x);
+        if (input.connected)
+        {
+            getValue = switchValue.value;
 
-        if (getValue == 0)
-        {
-            output = 1;
-            
-        } else 
-        {
-            output = 0;
+            if (getValue == 0)
+            {
+                output = 1;
+
+            }
+            else
+            {
+                output = 0;
+            }
+            Debug.Log(output);
         }
-        Debug.Log(output);
+       
     }
 }

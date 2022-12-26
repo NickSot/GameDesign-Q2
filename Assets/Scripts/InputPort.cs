@@ -6,6 +6,7 @@ using UnityEngine;
 public class InputPort : MonoBehaviour
 {
     [HideInInspector] public OutputPort connectedOutputPort;
+    public bool connected;
 
     [SerializeField] float lineWidth;
     LineRenderer lr;
@@ -25,11 +26,13 @@ public class InputPort : MonoBehaviour
             lr.SetVertexCount(2);
             lr.SetPosition(0, new Vector3(transform.position.x, transform.position.y, -0.9f));
             lr.SetPosition(1, new Vector3(connectedPortPos.x, connectedPortPos.y, -0.9f));
+            connected = true;
         
         }
         else
         {
             lr.SetVertexCount(0);
+            connected = false;
         }
     }
 }
