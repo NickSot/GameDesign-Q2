@@ -1,27 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class ORGate : Component
 {
-    // Start is called before the first frame update
-    public static string s = "";
+    Switch switchValue1;
+    Switch switchValue2;
+    InputPort input1;
+    InputPort input2;
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject IPort1;
+    public GameObject IPort2;
+    private int getValue1;
+    private int getValue2;
+    private int output;
 
-    public static int key;
-
-    public void Start()
+    void Awake()
     {
-        key = PlayerPrefs.GetInt(s);   
+        switchValue1 = button1.GetComponent<Switch>();
+        switchValue2 = button2.GetComponent<Switch>();
+        input1 = IPort1.GetComponent<InputPort>();
+        input2 = IPort2.GetComponent<InputPort>();
     }
 
-    public void Update()
+    void Update()
     {
-        if (key == 0)
+        if (input1.connected && input2.connected)
         {
-            Debug.Log("It works");
+            getValue1 = switchValue1.value;
+            getValue2 = switchValue2.value;
+
+            if (getValue1 == 0 && getValue2 == 0)
+            {
+                output = 0;
+                Debug.Log(output);
+            }
+            else
+            {
+                output = 1;
+                Debug.Log(output);
+            }
+            
         }
-
-        Debug.Log("It does not work");
-
     }
+
 }
