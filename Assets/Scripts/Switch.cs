@@ -8,7 +8,7 @@ public class Switch : MonoBehaviour
     public int value;
     public Text current;
     public GameObject btn;
-    private string currentValue = "input";
+    
     void Start()
     {
         value = 0;
@@ -17,12 +17,12 @@ public class Switch : MonoBehaviour
         
     }
 
-    void SetValue(int value)
+    private void SetValue(int value)
     {
         this.value = value;
     }
 
-    int GetValue()
+    private int GetValue()
     {
         return this.value;
     }
@@ -48,10 +48,7 @@ public class Switch : MonoBehaviour
 
     private void Update()
     {
-        this.value = GetValue();
+        value = GetValue();
         
     }
-
-
-
 }

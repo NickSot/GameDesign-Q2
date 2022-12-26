@@ -5,8 +5,7 @@ using Unity.VisualScripting;
 
 public class ORGate : Component
 {
-    Switch switchValue1;
-    Switch switchValue2;
+   
     InputPort input1;
     InputPort input2;
     public GameObject button1;
@@ -15,12 +14,10 @@ public class ORGate : Component
     public GameObject IPort2;
     private int getValue1;
     private int getValue2;
-    private int output;
+    public int output;
 
     void Awake()
     {
-        switchValue1 = button1.GetComponent<Switch>();
-        switchValue2 = button2.GetComponent<Switch>();
         input1 = IPort1.GetComponent<InputPort>();
         input2 = IPort2.GetComponent<InputPort>();
     }
@@ -29,18 +26,21 @@ public class ORGate : Component
     {
         if (input1.connected && input2.connected)
         {
-            getValue1 = switchValue1.value;
-            getValue2 = switchValue2.value;
+            
+            getValue1 = input1.GetPortValue();
+            getValue2 = input2.GetPortValue();
 
             if (getValue1 == 0 && getValue2 == 0)
             {
+               
                 output = 0;
-                Debug.Log(output);
+                Debug.Log("OR output: " + output);
             }
             else
             {
+              
                 output = 1;
-                Debug.Log(output);
+                Debug.Log("OR output: " + output);
             }
             
         }

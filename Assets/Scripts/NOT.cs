@@ -5,35 +5,36 @@ using UnityEngine;
 
 public class NOT : Component
 {
-    Switch switchValue;
     InputPort input;
     public GameObject button;
     public GameObject IPort;
     private int getValue;
-    private int output;
+    public int output;
     void Awake()
     {
-        switchValue = button.GetComponent<Switch>();
         input = IPort.GetComponent<InputPort>();
-
+       
     }
 
     void Update()
     {
+
         if (input.connected)
         {
-            getValue = switchValue.value;
+            
+            getValue = input.GetPortValue();
+            
 
             if (getValue == 0)
             {
                 output = 1;
-
             }
             else
             {
                 output = 0;
             }
-            Debug.Log(output);
+
+            Debug.Log("NOT output: " + output);
         }
        
     }
