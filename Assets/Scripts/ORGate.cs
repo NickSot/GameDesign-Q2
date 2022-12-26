@@ -8,8 +8,6 @@ public class ORGate : Component
    
     InputPort input1;
     InputPort input2;
-    public GameObject button1;
-    public GameObject button2;
     public GameObject IPort1;
     public GameObject IPort2;
     private int getValue1;

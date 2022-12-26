@@ -6,7 +6,6 @@ using UnityEngine;
 public class NOT : Component
 {
     InputPort input;
-    public GameObject button;
     public GameObject IPort;
     private int getValue;
     public int output;
