@@ -9,6 +9,10 @@ TagManager:
   - ORGate
   - ANDGate
   - NOTGate
+  - Clock
+  - DFlipFlop
+  - QAND
+  - QBar
   layers:
   - Default
   - TransparentFX

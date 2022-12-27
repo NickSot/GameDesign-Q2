@@ -10,7 +10,7 @@ public class InputPort : MonoBehaviour
     [HideInInspector] public string outputTag;
     [SerializeField] float lineWidth;
     LineRenderer lr;
-
+    private int QValue;
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -54,10 +54,20 @@ public class InputPort : MonoBehaviour
         } else if (outputTag == "NOTGate")
         {
             return connectedOutputPort.GetComponentInParent<NOT>().output;
+        } else if (outputTag == "Clock")
+        {
+            return connectedOutputPort.GetComponentInParent<Clock>().clockValue; 
+        } else if (outputTag == "QAND")
+        {
+            return connectedOutputPort.GetComponentInParent<NOT>().output; 
+
+        } else if (outputTag == "QBar")
+        {
+            return connectedOutputPort.GetComponentInParent<NOT>().output;
         } else
         {
             return 0;
-        }
+        } 
         
     }
    

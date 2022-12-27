@@ -8,13 +8,13 @@ public class Switch : MonoBehaviour
     public int value;
     public Text current;
     public GameObject btn;
-    
+
     void Start()
     {
         value = 0;
         btn.GetComponent<Image>().color = Color.red;
         current.text = value + "";
-        
+
     }
 
     private void SetValue(int value)
