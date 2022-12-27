@@ -6,8 +6,8 @@ using UnityEngine;
 public class InputPort : MonoBehaviour
 {
     [HideInInspector] public OutputPort connectedOutputPort;
-    public bool connected;
-    public string outputTag;
+    [HideInInspector] public bool connected;
+    [HideInInspector] public string outputTag;
     [SerializeField] float lineWidth;
     LineRenderer lr;
 

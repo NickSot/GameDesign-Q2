@@ -31,12 +31,10 @@ public class ANDGate : Component
             if (getValue1 == 1 && getValue2 == 1)
             {
                output = 1;
-               Debug.Log("AND output: " + output);
             }
             else
             {
                 output = 0;
-                Debug.Log("AND output: " + output);
             }
             
         }

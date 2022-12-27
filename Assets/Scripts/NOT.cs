@@ -32,8 +32,6 @@ public class NOT : Component
             {
                 output = 0;
             }
-
-            Debug.Log("NOT output: " + output);
         }
        
     }

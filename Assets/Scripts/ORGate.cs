@@ -32,13 +32,11 @@ public class ORGate : Component
             {
                
                 output = 0;
-                Debug.Log("OR output: " + output);
             }
             else
             {
               
                 output = 1;
-                Debug.Log("OR output: " + output);
             }
             
         }
