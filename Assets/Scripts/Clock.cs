@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Clock : MonoBehaviour
 {
     [HideInInspector] public int clockValue;
-    //public GameObject clock;
+    private string clk = "";
     public Text clockText;
 
     void Start()
@@ -26,5 +26,18 @@ public class Clock : MonoBehaviour
             clockValue = 0;
         }
         clockText.text = clockValue + "";
+    }
+
+    private void CheckClockValue()
+    {
+        if (clockValue == 0)
+        {
+            PlayerPrefs.SetInt(clk, 5);
+        }
+    }
+
+    private void Update()
+    {
+        CheckClockValue();
     }
 }

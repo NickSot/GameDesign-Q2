@@ -9,10 +9,12 @@ public class NOT : Component
     public GameObject IPort;
     private int getValue;
     [HideInInspector] public int output;
+    [HideInInspector] public int oldQ;
+    [HideInInspector] public int newQ;
     void Awake()
     {
         input = IPort.GetComponent<InputPort>();
-       
+        oldQ = output;
     }
 
     void Update()
@@ -32,6 +34,8 @@ public class NOT : Component
             {
                 output = 0;
             }
+            oldQ = newQ;
+            newQ = output;
         }
        
     }

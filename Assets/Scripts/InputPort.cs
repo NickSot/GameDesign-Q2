@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InputPort : MonoBehaviour
@@ -10,7 +12,8 @@ public class InputPort : MonoBehaviour
     [HideInInspector] public string outputTag;
     [SerializeField] float lineWidth;
     LineRenderer lr;
-    private int QValue;
+    private string clk = "";
+    int QValue;
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -59,8 +62,14 @@ public class InputPort : MonoBehaviour
             return connectedOutputPort.GetComponentInParent<Clock>().clockValue; 
         } else if (outputTag == "QAND")
         {
-            return connectedOutputPort.GetComponentInParent<NOT>().output; 
-
+            if (PlayerPrefs.GetInt(clk) == 5)
+            {
+                return connectedOutputPort.GetComponentInParent<NOT>().oldQ;
+            } else
+            {
+                QValue = connectedOutputPort.GetComponentInParent<NOT>().newQ;
+                return QValue;
+            }
         } else if (outputTag == "QBar")
         {
             return connectedOutputPort.GetComponentInParent<NOT>().output;
@@ -70,6 +79,6 @@ public class InputPort : MonoBehaviour
         } 
         
     }
-   
+    
 }
 
