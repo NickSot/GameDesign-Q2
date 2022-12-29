@@ -6,27 +6,27 @@ using UnityEngine.EventSystems;
 
 public abstract class Component : MonoBehaviour
 {
-    [SerializeField] bool isNot = false;
+    // [SerializeField] bool isNot = false;
 
-    [SerializeField] OutputPort output;
+    // [SerializeField] OutputPort output;
 
-    public abstract bool LogicStatement();
+    // public abstract bool LogicStatement();
 
-    public bool ProcessOutput()
-    {
-        if (isNot)
-        {
-            return !LogicStatement();
-        }
-        else
-        {
-            return LogicStatement();
-        }
-    }
+    // public bool ProcessOutput()
+    // {
+    //     if (isNot)
+    //     {
+    //         return !LogicStatement();
+    //     }
+    //     else
+    //     {
+    //         return LogicStatement();
+    //     }
+    // }
 
-    private void Update()
-    {
-        output.currentValue = ProcessOutput();
-    }
+    // public void Update()
+    // {
+    //     output.currentValue = ProcessOutput();
+    // }
 
 }
