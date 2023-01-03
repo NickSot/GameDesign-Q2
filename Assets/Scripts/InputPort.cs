@@ -48,32 +48,56 @@ public class InputPort : MonoBehaviour
         {
             return connectedOutputPort.GetComponentInParent<Switch>().value;
         }
+
         else if (outputTag == "ANDGate")
         {
             return connectedOutputPort.GetComponentInParent<ANDGate>().output;
-        } else if (outputTag == "ORGate")
+        } 
+        
+        else if (outputTag == "ORGate")
         {
             return connectedOutputPort.GetComponentInParent<ORGate>().output;
-        } else if (outputTag == "NOTGate")
+        } 
+
+        else if (outputTag == "NorGate")
+        {
+            return connectedOutputPort.GetComponentInParent<Nor>().output;
+        } 
+
+        else if (outputTag == "NandGate")
+        {
+            return connectedOutputPort.GetComponentInParent<Nand>().output;
+        }
+
+        else if (outputTag == "NOTGate")
         {
             return connectedOutputPort.GetComponentInParent<NOT>().output;
-        } else if (outputTag == "Clock")
+        } 
+        
+        else if (outputTag == "Clock")
         {
             return connectedOutputPort.GetComponentInParent<Clock>().clockValue; 
-        } else if (outputTag == "QAND")
+        } 
+        
+        else if (outputTag == "QAND")
         {
             if (PlayerPrefs.GetInt(clk) == 5)
             {
                 return connectedOutputPort.GetComponentInParent<NOT>().oldQ;
-            } else
+            } 
+            
+            else
             {
                 QValue = connectedOutputPort.GetComponentInParent<NOT>().newQ;
                 return QValue;
             }
+
         } else if (outputTag == "QBar")
         {
             return connectedOutputPort.GetComponentInParent<NOT>().output;
-        } else
+        } 
+        
+        else
         {
             return 0;
         } 
