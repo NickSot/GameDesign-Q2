@@ -13,6 +13,8 @@ TagManager:
   - DFlipFlop
   - QAND
   - QBar
+  - NandGate
+  - NorGate
   layers:
   - Default
   - TransparentFX
@@ -47,6 +49,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 550249805
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
