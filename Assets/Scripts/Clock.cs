@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class Clock : MonoBehaviour
 {
     [HideInInspector] public int clockValue;
     private string clk = "";
-    public Text clockText;
-
+    public TextMeshPro clockText;
+    
     void Start()
     {
         clockValue = 0;
         InvokeRepeating("ClockSwitch", 0f, 1f);
         clockText.text = clockValue + "";
+        
     }
 
     public void ClockSwitch()
