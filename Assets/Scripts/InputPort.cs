@@ -83,18 +83,18 @@ public class InputPort : MonoBehaviour
         {
             if (PlayerPrefs.GetInt(clk) == 5)
             {
-                return connectedOutputPort.GetComponentInParent<NOT>().oldQ;
+                return connectedOutputPort.GetComponentInParent<Nand>().oldQ;
             } 
             
             else
             {
-                QValue = connectedOutputPort.GetComponentInParent<NOT>().newQ;
+                QValue = connectedOutputPort.GetComponentInParent<Nand>().newQ;
                 return QValue;
             }
 
         } else if (outputTag == "QBar")
         {
-            return connectedOutputPort.GetComponentInParent<NOT>().output;
+            return connectedOutputPort.GetComponentInParent<Nand>().output;
         } 
         
         else
