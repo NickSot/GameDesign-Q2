@@ -22,10 +22,9 @@ public class DisplayText : MonoBehaviour
     private string currentScene;
 
     // for some reason after copying the code I had to format the strings like this to prevent indentation so it's ugly not
-    private string lvlTutorialText = @"Bla Bla Bla
-";
-
-    private string stats;
+    private string lvlTutorialGreetingText = @"Welcome to the tutorial level. We are going to make an OR, a NOT and an AND Gate from NAND and NOR Gates.
+   Press Enter to continue";
+    // private string lvlExpText =@"bla";
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +39,7 @@ public class DisplayText : MonoBehaviour
         if(currentScene == "Tutorial")
         {
             // display level 1 start text
-            textRef.text = lvlTutorialText;
+            textRef.text = lvlTutorialGreetingText;
         } 
     }
 
