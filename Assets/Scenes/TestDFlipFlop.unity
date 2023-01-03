@@ -2097,6 +2097,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2808195127324434250, guid: 656b3dfc7b09bad49aa09c4dc4607be0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 2808195127324434251, guid: 656b3dfc7b09bad49aa09c4dc4607be0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 2808195127324434251, guid: 656b3dfc7b09bad49aa09c4dc4607be0, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
     - target: {fileID: 2808195128231022076, guid: 656b3dfc7b09bad49aa09c4dc4607be0, type: 3}
       propertyPath: m_Name
       value: D-FlipFlop
