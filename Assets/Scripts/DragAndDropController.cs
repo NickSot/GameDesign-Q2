@@ -13,7 +13,7 @@ public class DragAndDropController : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] float lineWidth;
 
-    Component componentBeingHeld;
+    [HideInInspector] public Component componentBeingHeld;
     InputPort inputPortBeingHeld;
     OutputPort outputPortBeingHeld;
     LineRenderer lr;
@@ -50,7 +50,9 @@ public class DragAndDropController : MonoBehaviour
                 else if (obj.GetComponent<OutputPort>() != null)
                 {
                     outputPortBeingHeld = obj.GetComponent<OutputPort>();
-                } else if (obj.GetComponent<CustomButton>() != null) {
+                }
+                else if (obj.GetComponent<CustomButton>() != null)
+                {
                     obj.GetComponent<CustomButton>().OnClick();
                 }
             }
@@ -79,7 +81,8 @@ public class DragAndDropController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             GameObject obj = SenseObject();
-            if (SenseObject() == null) {
+            if (SenseObject() == null)
+            {
                 lr.SetVertexCount(0);
             }
             if (componentBeingHeld != null)
