@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-public class Clock : MonoBehaviour
+public class Clock : Component
 {
     [HideInInspector] public int clockValue;
-    private string clk = "";
-    public Text clockText;
-
+    public TextMeshPro clockText;
+    
     void Start()
     {
         clockValue = 0;
         InvokeRepeating("ClockSwitch", 0f, 1f);
         clockText.text = clockValue + "";
+        
     }
 
     public void ClockSwitch()
@@ -26,18 +27,5 @@ public class Clock : MonoBehaviour
             clockValue = 0;
         }
         clockText.text = clockValue + "";
-    }
-
-    private void CheckClockValue()
-    {
-        if (clockValue == 0)
-        {
-            PlayerPrefs.SetInt(clk, 5);
-        }
-    }
-
-    private void Update()
-    {
-        CheckClockValue();
     }
 }

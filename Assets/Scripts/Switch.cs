@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Switch : MonoBehaviour
+public class Switch : Component
 {
     public int value;
     public Text current;

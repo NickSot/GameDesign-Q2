@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class Output : MonoBehaviour
+public class Output : Component
 {
     InputPort input;
     public GameObject IPort;
-    public Text outputText;
+    public TextMeshPro outputText;
+    [HideInInspector] public int outputValue;
     void Awake()
     {
         input = IPort.GetComponent<InputPort>();
@@ -18,14 +20,27 @@ public class Output : MonoBehaviour
     {
         if (input.connected)
         {
-            outputText.text = input.GetPortValue() + "";
+            outputValue = input.GetPortValue();
+            if (outputValue < int.MaxValue)
+            {
+                outputText.text = outputValue + "";
+            } else
+            {
+                outputText.text = "";
+                this.GetComponent<SpriteRenderer>().color = Color.white;
+            }
             if (input.GetPortValue() == 1)
             {
                 this.GetComponent<SpriteRenderer>().color = Color.green;
-            } else
+            } else if (input.GetPortValue() == 0)
             {
                 this.GetComponent<SpriteRenderer>().color = Color.red;
             }
+        } else
+        {
+            outputValue = int.MaxValue;
+            outputText.text = "";
+            this.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 }

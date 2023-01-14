@@ -9,12 +9,11 @@ public class NOT : Component
     public GameObject IPort;
     private int getValue;
     [HideInInspector] public int output;
-    [HideInInspector] public int oldQ;
-    [HideInInspector] public int newQ;
+
     void Awake()
     {
         input = IPort.GetComponent<InputPort>();
-        oldQ = output;
+        output = int.MaxValue; 
     }
 
     void Update()
@@ -30,12 +29,13 @@ public class NOT : Component
             {
                 output = 1;
             }
-            else
+            else if (getValue == 1)
             {
                 output = 0;
             }
-            oldQ = newQ;
-            newQ = output;
+        } else
+        {
+            output = int.MaxValue;
         }
        
     }
