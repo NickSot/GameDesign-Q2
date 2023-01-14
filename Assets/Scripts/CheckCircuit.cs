@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
-//using System.Diagnostics;
+using System.Threading;
 using System.Runtime.ConstrainedExecution;
 
 public class CheckCircuit : MonoBehaviour
@@ -44,42 +44,29 @@ public class CheckCircuit : MonoBehaviour
             checkNOTTutorial();
         } else if (SceneManager.GetActiveScene().name == "LightBulb")
         {
-
             Invoke("test1", 0.0f);
-            
-            if (current == 0)
-            {
-                testLight++;
-            }
             Invoke("test2", 1.0f);
-            if (current == 1)
-            {
-                testLight++;
-            }
             Invoke("test3", 2.0f);
-            if (current == 1)
-            {
-                testLight++;
-            }
             Invoke("test4", 3.0f);
-            if (current == 0)
-            {
-                testLight++;
-            }
+            Invoke("test5", 4.0f);
 
             //checkLightBulb();
             //testing = false;
-            //UnityEngine.Debug.Log(testLight);
-            if (testLight == 4)
-            {
-                bulb.GetComponent<SpriteRenderer>().color = Color.green;
-                nextLevel.SetActive(true);
-            } else
-            {
-                testLight = 0;
-            }
+            Invoke("method", 5.0f);
         }
         //testing = false;
+    }
+
+    void method() {
+        UnityEngine.Debug.Log(testLight);
+        if (testLight == 4)
+        {
+            bulb.GetComponent<SpriteRenderer>().color = Color.green;
+            nextLevel.SetActive(true);
+        } else
+        {
+            testLight = 0;
+        }
     }
 
     void checkNOTTutorial()
@@ -105,7 +92,13 @@ public class CheckCircuit : MonoBehaviour
         inputNode.setValue(0);
         inputNode2.setValue(0);
         current = outputValue;
-        Debug.Log("Test 1: " + outputValue);    
+        
+        Debug.Log("Test 1: " + outputValue);
+
+        // if (current == 0)
+        // {
+        //     testLight++;
+        // }  
     }
     void test2()
     {
@@ -113,6 +106,11 @@ public class CheckCircuit : MonoBehaviour
         inputNode2.setValue(1);
         current = outputValue;
         Debug.Log("Test 2: " + outputValue);
+
+        if (current == 0)
+        {
+            testLight++;
+        }
     }
      void test3()
     {
@@ -120,6 +118,11 @@ public class CheckCircuit : MonoBehaviour
         inputNode2.setValue(0);
         current = outputValue;
         Debug.Log("Test 3: " + outputValue); 
+
+        if (current == 1)
+        {
+            testLight++;
+        }
     }
 
     void test4() 
@@ -128,43 +131,23 @@ public class CheckCircuit : MonoBehaviour
         inputNode2.setValue(1);
         current = outputValue;
         Debug.Log("Test 4: " + outputValue);
+
+        if (current == 1)
+        {
+            testLight++;
+        }
     }
-    void checkLightBulb()
+
+    void test5() 
     {
-        inputNode.setValue(0);
-        inputNode2.setValue(0);
-        Debug.Log("Test 1: " + outputValue);
-      
-        if (outputValue == 0)
-        {
-            testLight++;
-        }
-        inputNode.setValue(0);
-        inputNode2.setValue(1);
-        Debug.Log("Test 2: " + outputValue);
-       
-        if (outputValue == 1)
-        {
-            testLight++;
-        }
-        inputNode.setValue(1);
-        inputNode2.setValue(0);
-        Debug.Log("Test 3: " + outputValue);
-        
-        if (outputValue == 1)
-        {
-            testLight++;
-        }
         inputNode.setValue(1);
         inputNode2.setValue(1);
+        current = outputValue;
         Debug.Log("Test 4: " + outputValue);
-       
-        if (outputValue == 0)
+
+        if (current == 0)
         {
             testLight++;
         }
-        //UnityEngine.Debug.Log("4" + testLight);
-       
-        
     }
 }
