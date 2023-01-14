@@ -18,6 +18,7 @@ public class ANDGate : Component
     {
         input1 = IPort1.GetComponent<InputPort>();
         input2 = IPort2.GetComponent<InputPort>();
+        output = int.MaxValue;
     }
 
     void Update()
@@ -32,11 +33,14 @@ public class ANDGate : Component
             {
                output = 1;
             }
-            else
+            else if (getValue1 < int.MaxValue && getValue2 < int.MaxValue)
             {
                 output = 0;
             }
-            
+        }
+        else
+        {
+            output = int.MaxValue;
         }
     }
 }

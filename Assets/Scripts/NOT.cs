@@ -13,7 +13,7 @@ public class NOT : Component
     void Awake()
     {
         input = IPort.GetComponent<InputPort>();
-
+        output = int.MaxValue; 
     }
 
     void Update()
@@ -29,11 +29,13 @@ public class NOT : Component
             {
                 output = 1;
             }
-            else
+            else if (getValue == 1)
             {
                 output = 0;
             }
-
+        } else
+        {
+            output = int.MaxValue;
         }
        
     }

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Clock : Component
 {
     [HideInInspector] public int clockValue;
-    private string clk = "";
     public TextMeshPro clockText;
     
     void Start()
@@ -28,18 +27,5 @@ public class Clock : Component
             clockValue = 0;
         }
         clockText.text = clockValue + "";
-    }
-
-    private void CheckClockValue()
-    {
-        if (clockValue == 0)
-        {
-            PlayerPrefs.SetInt(clk, 5);
-        }
-    }
-
-    private void Update()
-    {
-        CheckClockValue();
     }
 }

@@ -12,8 +12,6 @@ public class InputPort : MonoBehaviour
     [HideInInspector] public string outputTag;
     [SerializeField] float lineWidth;
     LineRenderer lr;
-    private string clk = "";
-    int QValue;
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -77,29 +75,9 @@ public class InputPort : MonoBehaviour
         else if (outputTag == "Clock")
         {
             return connectedOutputPort.GetComponentInParent<Clock>().clockValue; 
-        } 
-        
-        else if (outputTag == "QAND")
+        } else
         {
-            if (PlayerPrefs.GetInt(clk) == 5)
-            {
-                return connectedOutputPort.GetComponentInParent<Nand>().oldQ;
-            } 
-            
-            else
-            {
-                QValue = connectedOutputPort.GetComponentInParent<Nand>().newQ;
-                return QValue;
-            }
-
-        } else if (outputTag == "QBar")
-        {
-            return connectedOutputPort.GetComponentInParent<Nand>().output;
-        } 
-        
-        else
-        {
-            return 0;
+            return int.MaxValue;
         } 
         
     }
