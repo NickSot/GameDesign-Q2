@@ -12,11 +12,13 @@ public class InputPort : MonoBehaviour
     [HideInInspector] public string outputTag;
     [SerializeField] float lineWidth;
     LineRenderer lr;
+    public CheckCircuit check;
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
         lr.startWidth = lineWidth;
         lr.endWidth = lineWidth;
+        check = FindObjectOfType<CheckCircuit>();
     }
 
     public void Update()
@@ -42,43 +44,87 @@ public class InputPort : MonoBehaviour
 
     public int GetPortValue()
     {
-        if (outputTag == "Switch")
+        if (!check.testing)
         {
-            return connectedOutputPort.GetComponentInParent<InputNode>().value;
-        }
+            if (outputTag == "Switch")
+            {
+                return connectedOutputPort.GetComponentInParent<InputNode>().value;
+            }
 
-        else if (outputTag == "ANDGate")
-        {
-            return connectedOutputPort.GetComponentInParent<ANDGate>().output;
-        } 
-        
-        else if (outputTag == "ORGate")
-        {
-            return connectedOutputPort.GetComponentInParent<ORGate>().output;
-        } 
+            else if (outputTag == "ANDGate")
+            {
+                return connectedOutputPort.GetComponentInParent<ANDGate>().output;
+            }
 
-        else if (outputTag == "NorGate")
-        {
-            return connectedOutputPort.GetComponentInParent<Nor>().output;
-        } 
+            else if (outputTag == "ORGate")
+            {
+                return connectedOutputPort.GetComponentInParent<ORGate>().output;
+            }
 
-        else if (outputTag == "NandGate")
-        {
-            return connectedOutputPort.GetComponentInParent<Nand>().output;
-        }
+            else if (outputTag == "NorGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nor>().output;
+            }
 
-        else if (outputTag == "NOTGate")
-        {
-            return connectedOutputPort.GetComponentInParent<NOT>().output;
-        } 
-        
-        else if (outputTag == "Clock")
-        {
-            return connectedOutputPort.GetComponentInParent<Clock>().clockValue; 
+            else if (outputTag == "NandGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nand>().output;
+            }
+
+            else if (outputTag == "NOTGate")
+            {
+                return connectedOutputPort.GetComponentInParent<NOT>().output;
+            }
+
+            else if (outputTag == "Clock")
+            {
+                return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
+            }
+            else
+            {
+                return int.MaxValue;
+            }
         } else
         {
-            return int.MaxValue;
-        } 
+            if (outputTag == "Switch")
+            {
+                return connectedOutputPort.GetComponentInParent<InputNode>().testValue;
+            }
+            else if (outputTag == "ANDGate")
+            {
+                return connectedOutputPort.GetComponentInParent<ANDGate>().output;
+            }
+
+            else if (outputTag == "ORGate")
+            {
+                return connectedOutputPort.GetComponentInParent<ORGate>().output;
+            }
+
+            else if (outputTag == "NorGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nor>().output;
+            }
+
+            else if (outputTag == "NandGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nand>().output;
+            }
+
+            else if (outputTag == "NOTGate")
+            {
+                return connectedOutputPort.GetComponentInParent<NOT>().output;
+            }
+
+            else if (outputTag == "Clock")
+            {
+                return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
+            }
+            else
+            {
+                return int.MaxValue;
+            }
+        }
+        
         
     }
     
