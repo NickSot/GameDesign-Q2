@@ -890,6 +890,11 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &814762907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9160959885443797904, guid: 4c3170633a6d7a7408ec28ad3647eb89, type: 3}
+  m_PrefabInstance: {fileID: 2525328135345276350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &873152996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,6 +2339,7 @@ GameObject:
   - component: {fileID: 2124484947}
   - component: {fileID: 2124484946}
   - component: {fileID: 2124484945}
+  - component: {fileID: 2124484949}
   m_Layer: 0
   m_Name: Output
   m_TagString: Untagged
@@ -2451,6 +2457,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2124484949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124484944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1400da390459e5499999282cdcd1b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: {fileID: 814762907}
+  inputNode: {fileID: 0}
+  inputNode2: {fileID: 0}
+  nextLevel: {fileID: 0}
+  bulb: {fileID: 2124484944}
+  GameRunning: 0
 --- !u!1001 &2525328135345276350
 PrefabInstance:
   m_ObjectHideFlags: 0
