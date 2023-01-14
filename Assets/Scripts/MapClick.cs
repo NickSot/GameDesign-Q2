@@ -11,21 +11,31 @@ public class MapClick : MonoBehaviour
 
     }
 
+    // function that compares the positions of the mouse and the level placeholders
+    void LoadLevel(Vector3 mousePos, GameObject level, string levelName)
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if ((mousePos.x > level.transform.position.x - level.transform.localScale.x && mousePos.x < level.transform.position.x + level.transform.localScale.x)
+                && (mousePos.y > level.transform.position.y - level.transform.localScale.y && mousePos.y < level.transform.position.y + level.transform.localScale.y))
+            {
+                SceneManager.LoadScene(levelName);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = Input.mousePosition;
+        // initialize the mouse position and the level placeholder positions
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         GameObject sewers = GameObject.Find("Sewers");
+        GameObject lights = GameObject.Find("LightFix");
 
-        mousePos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mousePos.z));
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if ((mousePos.x > sewers.transform.position.x - sewers.transform.localScale.x && mousePos.x < sewers.transform.position.x + sewers.transform.localScale.x)
-                && (mousePos.y > sewers.transform.position.y - sewers.transform.localScale.y && mousePos.y < sewers.transform.position.y + sewers.transform.localScale.y))
-            {
-                SceneManager.LoadScene("SampleScene");
-            }
-        }
+        // Load the levels, based on the position of the mouse on the map
+        // TODO: Change the names of the scenes according to their purposes
+        LoadLevel(mousePos, sewers, "SampleScene");
+        LoadLevel(mousePos, lights, "SampleScene");
     }
 }
