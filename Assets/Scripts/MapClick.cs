@@ -29,13 +29,14 @@ public class MapClick : MonoBehaviour
     {
         // initialize the mouse position and the level placeholder positions
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         GameObject sewers = GameObject.Find("Sewers");
         GameObject lights = GameObject.Find("LightFix");
+        GameObject factory = GameObject.Find("Factory");
 
         // Load the levels, based on the position of the mouse on the map
         // TODO: Change the names of the scenes according to their purposes
         LoadLevel(mousePos, sewers, "SampleScene");
         LoadLevel(mousePos, lights, "SampleScene");
+        LoadLevel(mousePos, factory, "SampleScene");
     }
 }
