@@ -46,7 +46,7 @@ public class InputPort : MonoBehaviour
     {
         if (outputTag == "Switch")
         {
-            return connectedOutputPort.GetComponentInParent<Switch>().value;
+            return connectedOutputPort.GetComponentInParent<InputNode>().value;
         }
 
         else if (outputTag == "ANDGate")

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-public class Clock : MonoBehaviour
+public class Clock : Component
 {
     [HideInInspector] public int clockValue;
     private string clk = "";
