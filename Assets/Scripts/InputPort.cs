@@ -12,13 +12,14 @@ public class InputPort : MonoBehaviour
     [HideInInspector] public string outputTag;
     [SerializeField] float lineWidth;
     LineRenderer lr;
-    public CheckCircuit check;
+    CheckCircuit check;
+    //public GameObject checkobject;
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
         lr.startWidth = lineWidth;
         lr.endWidth = lineWidth;
-        check = FindObjectOfType<CheckCircuit>();
+        check = FindObjectOfType<CheckCircuit>().GetComponent<CheckCircuit>();
     }
 
     public void Update()
@@ -44,6 +45,7 @@ public class InputPort : MonoBehaviour
 
     public int GetPortValue()
     {
+        
         if (!check.testing)
         {
             if (outputTag == "Switch")
@@ -88,15 +90,18 @@ public class InputPort : MonoBehaviour
         {
             if (outputTag == "Switch")
             {
+                //Debug.Log("hello1, " + connectedOutputPort.GetComponentInParent<InputNode>().testValue);
                 return connectedOutputPort.GetComponentInParent<InputNode>().testValue;
             }
             else if (outputTag == "ANDGate")
             {
+                //Debug.Log("hello4, " + connectedOutputPort.GetComponentInParent<ANDGate>().output);
                 return connectedOutputPort.GetComponentInParent<ANDGate>().output;
             }
 
             else if (outputTag == "ORGate")
             {
+                //Debug.Log("hello2, " + connectedOutputPort.GetComponentInParent<ORGate>().output);
                 return connectedOutputPort.GetComponentInParent<ORGate>().output;
             }
 
@@ -112,6 +117,7 @@ public class InputPort : MonoBehaviour
 
             else if (outputTag == "NOTGate")
             {
+                //Debug.Log("hello3, " + connectedOutputPort.GetComponentInParent<NOT>().output);
                 return connectedOutputPort.GetComponentInParent<NOT>().output;
             }
 
