@@ -25,4 +25,10 @@ public class InputNode : Component
             this.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
+
+    public void setValue(int newValue)
+    {
+        value = newValue;
+    }
+    
 }

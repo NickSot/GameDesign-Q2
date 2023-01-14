@@ -9,32 +9,47 @@ using System.Runtime.ConstrainedExecution;
 public class CheckCircuit : MonoBehaviour
 {
     public GameObject output;
-    public GameObject inputNode;
-    public GameObject inputNode2;
+    public InputNode inputNode;
+    public InputNode inputNode2;
     public GameObject nextLevel;
+    //public GameObject submit;
     public GameObject bulb;
     private int inputValue;
     private int inputValue2;
     private int outputValue;
-    private string blueprint;
+    private int testLight = 0;
+    public bool GameRunning;
 
     void Start()
     {
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
         nextLevel.SetActive(false);
     }
-    void Update()
+
+    private void Update()
     {
         outputValue = output.GetComponent<Output>().outputValue;
-        inputValue = inputNode.GetComponent<InputNode>().value;
-        inputValue2 = inputNode2.GetComponent<InputNode>().value;
+    }
+
+    public void Submit()
+    {
+        Time.timeScale = 0;
+        GameRunning = false;
         if (SceneManager.GetActiveScene().name == "NOTTutorial")
         {
             checkNOTTutorial();
         } else if (SceneManager.GetActiveScene().name == "LightBulb")
         {
-            blueprint = "(!i1 & i2) || (i1 & !i2)";
             checkLightBulb();
+            UnityEngine.Debug.Log(testLight);
+            if (testLight == 4)
+            {
+                bulb.GetComponent<SpriteRenderer>().color = Color.green;
+                nextLevel.SetActive(true);
+            } else
+            {
+                testLight = 0;
+            }
         }
             
     }
@@ -60,8 +75,33 @@ public class CheckCircuit : MonoBehaviour
 
     void checkLightBulb()
     {
-        
+        inputNode.setValue(0);
+        inputNode2.setValue(0);
+        UnityEngine.Debug.Log(outputValue);
+        if (outputValue == 0)
+        {
+            testLight++;
+        }
+        inputNode.setValue(0);
+        inputNode2.setValue(1);
+        UnityEngine.Debug.Log(outputValue);
+        if (outputValue == 1)
+        {
+            testLight++;
+        }
+        inputNode.setValue(1);
+        inputNode2.setValue(0);
+        UnityEngine.Debug.Log(outputValue);
+        if (outputValue == 1)
+        {
+            testLight++;
+        }
+        inputNode.setValue(1);
+        inputNode2.setValue(1);
+        UnityEngine.Debug.Log(outputValue);
+        if (outputValue == 0)
+        {
+            testLight++;
+        }
     }
-
-
 }
