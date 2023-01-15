@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2038857675993376568, guid: 6528464a55117e84b87b7e2482d46442, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2038857675993376568, guid: 6528464a55117e84b87b7e2482d46442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -350,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188270469257992872, guid: 0d43f1bc76adec542982d722366827d8, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4188270469257992872, guid: 0d43f1bc76adec542982d722366827d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,7 +403,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7320448754228822693, guid: c4c8f492e18eaa6b6b73c99caed6172d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7320448754228822693, guid: c4c8f492e18eaa6b6b73c99caed6172d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -891,7 +891,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2525328134589552663, guid: 4c3170633a6d7a7408ec28ad3647eb89, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2525328134589552663, guid: 4c3170633a6d7a7408ec28ad3647eb89, type: 3}
       propertyPath: m_LocalScale.x
@@ -1205,7 +1205,7 @@ PrefabInstance:
     - target: {fileID: 5943451539678186811, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1580145645}
+      objectReference: {fileID: 1681880053}
     - target: {fileID: 5943451539678186811, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: City
@@ -1319,7 +1319,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5943451540369970666, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
   m_PrefabInstance: {fileID: 1580145641}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1580145645
+--- !u!114 &1681880053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1465,8 +1465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18, y: 5.768097}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchoredPosition: {x: 4, y: 11}
+  m_SizeDelta: {x: 850, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927103475
 MonoBehaviour:
@@ -1490,10 +1490,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1501,7 +1501,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TEST
+  m_Text: "Welcome to Tutorial Level. In this level, you are going to make AND, OR,
+    NOT gates from NAND and NOR gates. NAND gate has 2 inputs and 1 output. If both
+    inputs are 1, then the output will become 0, else it will become 1. NOR gate
+    also has 2 inputs and 1 output. The output is 1 if both of the inputs are 0,
+    else the 0utput is 1. Not Gate has 1 input and 1 output. If the input is 1 then
+    the output is 0, else the output is 1. AND Gate has 2 inputs and 1 output. If
+    both of the inputs are 1, then the output is 1. Else the output is 0. OR gate
+    has 2 inputs and 1 output. If the both inputs are 0, then the output will be
+    0, else the output is 1. \n\nOnce you design the circuit, press submit to check
+    whether your solution is correct, If the solution is correct, then the light
+    below will turn green and there will be a button displayed on the scene. When
+    you click on the button then you will be navigated to City Overview, where you
+    will see some missions that you need to do.\n\nTo close the Information, click
+    on the INFO button. "
 --- !u!222 &1927103476
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1890,7 +1903,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7320448754228822693, guid: c4c8f492e18eaa6b6b73c99caed6172d, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7320448754228822693, guid: c4c8f492e18eaa6b6b73c99caed6172d, type: 3}
       propertyPath: m_LocalPosition.x
