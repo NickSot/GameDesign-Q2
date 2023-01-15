@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class NotTutorialCheck : MonoBehaviour
 {
     public InputNode inputNode;
     public GameObject nextLevel;
+    public GameObject submit;
     private int outputValue;
     private int testNot = 0;
     public Output output;
@@ -49,7 +50,7 @@ public class NotTutorialCheck : MonoBehaviour
     public void NextLevel()
     {
         Mode.testing = false;
-        //SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("AND_Tutorial");
     }
 
     public void Redo()
@@ -63,6 +64,7 @@ public class NotTutorialCheck : MonoBehaviour
         if (testNot == 2)
         {
             nextLevel.SetActive(true);
+            submit.SetActive(false);
         } else
         {
             testNot = 0;

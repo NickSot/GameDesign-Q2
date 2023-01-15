@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ANDTutorialCheck : MonoBehaviour
 {
     public InputNode inputNode;
@@ -11,6 +11,7 @@ public class ANDTutorialCheck : MonoBehaviour
     private int testAnd = 0;
     public Output output;
     public GameObject redo;
+    public GameObject submit;
     
     void Start()
     {
@@ -53,7 +54,7 @@ public class ANDTutorialCheck : MonoBehaviour
     public void NextLevel()
     {
         Mode.testing = false;
-        //SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("OR_Tutorial");
     }
 
     public void Redo()
@@ -67,6 +68,7 @@ public class ANDTutorialCheck : MonoBehaviour
         if (testAnd == 4)
         {
             nextLevel.SetActive(true);
+            submit.SetActive(false);
         } else
         {
             testAnd = 0;
