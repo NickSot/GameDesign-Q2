@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &102045123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9034855272818179869, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
+  m_PrefabInstance: {fileID: 1580145641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &245983871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,6 +915,7 @@ MonoBehaviour:
   nextLevel: {fileID: 1580145642}
   output: {fileID: 245983872}
   redo: {fileID: 1580145644}
+  submit: {fileID: 102045123}
 --- !u!1 &1104716613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,7 +1402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5943451541355289132, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943451541355289132, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1404,7 +1410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5943451541355289132, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943451541355289132, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1412,7 +1418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5943451541355289132, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
