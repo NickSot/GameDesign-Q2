@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2525328134589552665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 302.5955, y: 138.6148, z: 0}
-  m_LocalScale: {x: 190.72421, y: 157.41655, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7519753785998038123}
@@ -104,8 +104,6 @@ MonoBehaviour:
   IPort1: {fileID: 2969932264813960192}
   IPort2: {fileID: 2969932265012001454}
   output: 0
-  oldQ: 0
-  newQ: 0
 --- !u!61 &2525328134589552661
 BoxCollider2D:
   m_ObjectHideFlags: 0
