@@ -888,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.125, y: 0.09769372}
   m_AnchorMax: {x: 0.882, y: 0.9202919}
-  m_AnchoredPosition: {x: -9, y: 3}
+  m_AnchoredPosition: {x: 17, y: -1}
   m_SizeDelta: {x: 223, y: 69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017558608
@@ -1608,10 +1608,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1325224371212686354, guid: e23a1de5139119240bd0fd8ee04cfc31, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1325224371212686365, guid: e23a1de5139119240bd0fd8ee04cfc31, type: 3}
       propertyPath: m_Name
       value: GateSpawnMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1325224371538865736, guid: e23a1de5139119240bd0fd8ee04cfc31, type: 3}
+      propertyPath: dNDController
+      value: 
+      objectReference: {fileID: 304665662}
     - target: {fileID: 1325224371538865748, guid: e23a1de5139119240bd0fd8ee04cfc31, type: 3}
       propertyPath: m_SizeDelta.y
       value: 170
@@ -1768,8 +1776,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 11}
-  m_SizeDelta: {x: 850, y: 300}
+  m_AnchoredPosition: {x: -2, y: -23}
+  m_SizeDelta: {x: 850, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927103475
 MonoBehaviour:
@@ -1793,7 +1801,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
