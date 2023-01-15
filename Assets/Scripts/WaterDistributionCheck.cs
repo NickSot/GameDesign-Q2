@@ -48,10 +48,10 @@ public class WaterDistributionCheck : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        inputNode.setValue(input_1);
-        inputNode2.setValue(input_2);
-        outputNode.setValue(input_3);
-        outputNode2.setValue(input_4);
+        inputNode.setValue(input_3);
+        inputNode2.setValue(input_4);
+        outputNode.setValue(input_1);
+        outputNode2.setValue(input_2);
 
         yield return new WaitForSeconds(0.01f);
 
