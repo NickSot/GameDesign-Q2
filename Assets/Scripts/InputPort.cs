@@ -12,11 +12,14 @@ public class InputPort : MonoBehaviour
     [HideInInspector] public string outputTag;
     [SerializeField] float lineWidth;
     LineRenderer lr;
+    CheckCircuit check;
+    //public GameObject checkobject;
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
         lr.startWidth = lineWidth;
         lr.endWidth = lineWidth;
+        check = FindObjectOfType<CheckCircuit>().GetComponent<CheckCircuit>();
     }
 
     public void Update()
@@ -42,43 +45,92 @@ public class InputPort : MonoBehaviour
 
     public int GetPortValue()
     {
-        if (outputTag == "Switch")
-        {
-            return connectedOutputPort.GetComponentInParent<InputNode>().value;
-        }
-
-        else if (outputTag == "ANDGate")
-        {
-            return connectedOutputPort.GetComponentInParent<ANDGate>().output;
-        } 
         
-        else if (outputTag == "ORGate")
+        if (!check.testing)
         {
-            return connectedOutputPort.GetComponentInParent<ORGate>().output;
-        } 
+            if (outputTag == "Switch")
+            {
+                return connectedOutputPort.GetComponentInParent<InputNode>().value;
+            }
 
-        else if (outputTag == "NorGate")
-        {
-            return connectedOutputPort.GetComponentInParent<Nor>().output;
-        } 
+            else if (outputTag == "ANDGate")
+            {
+                return connectedOutputPort.GetComponentInParent<ANDGate>().output;
+            }
 
-        else if (outputTag == "NandGate")
-        {
-            return connectedOutputPort.GetComponentInParent<Nand>().output;
-        }
+            else if (outputTag == "ORGate")
+            {
+                return connectedOutputPort.GetComponentInParent<ORGate>().output;
+            }
 
-        else if (outputTag == "NOTGate")
-        {
-            return connectedOutputPort.GetComponentInParent<NOT>().output;
-        } 
-        
-        else if (outputTag == "Clock")
-        {
-            return connectedOutputPort.GetComponentInParent<Clock>().clockValue; 
+            else if (outputTag == "NorGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nor>().output;
+            }
+
+            else if (outputTag == "NandGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nand>().output;
+            }
+
+            else if (outputTag == "NOTGate")
+            {
+                return connectedOutputPort.GetComponentInParent<NOT>().output;
+            }
+
+            else if (outputTag == "Clock")
+            {
+                return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
+            }
+            else
+            {
+                return int.MaxValue;
+            }
         } else
         {
-            return int.MaxValue;
-        } 
+            if (outputTag == "Switch")
+            {
+                //Debug.Log("hello1, " + connectedOutputPort.GetComponentInParent<InputNode>().testValue);
+                return connectedOutputPort.GetComponentInParent<InputNode>().testValue;
+            }
+            else if (outputTag == "ANDGate")
+            {
+                //Debug.Log("hello4, " + connectedOutputPort.GetComponentInParent<ANDGate>().output);
+                return connectedOutputPort.GetComponentInParent<ANDGate>().output;
+            }
+
+            else if (outputTag == "ORGate")
+            {
+                //Debug.Log("hello2, " + connectedOutputPort.GetComponentInParent<ORGate>().output);
+                return connectedOutputPort.GetComponentInParent<ORGate>().output;
+            }
+
+            else if (outputTag == "NorGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nor>().output;
+            }
+
+            else if (outputTag == "NandGate")
+            {
+                return connectedOutputPort.GetComponentInParent<Nand>().output;
+            }
+
+            else if (outputTag == "NOTGate")
+            {
+                //Debug.Log("hello3, " + connectedOutputPort.GetComponentInParent<NOT>().output);
+                return connectedOutputPort.GetComponentInParent<NOT>().output;
+            }
+
+            else if (outputTag == "Clock")
+            {
+                return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
+            }
+            else
+            {
+                return int.MaxValue;
+            }
+        }
+        
         
     }
     

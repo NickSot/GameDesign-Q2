@@ -6,6 +6,9 @@ public class InputNode : Component
 {
     public OutputPort outputport;
     [HideInInspector] public int value;
+    public bool checking;
+    public int testValue;
+    int i = 0;
 
     private void Start()
     {
@@ -17,18 +20,27 @@ public class InputNode : Component
        outputport.currentValue = !outputport.currentValue;
         if (outputport.currentValue)
         {
+            
             value = 1;
+             
             this.GetComponent<SpriteRenderer>().color = Color.green;
         } else
         {
+            
             value = 0;
+            
             this.GetComponent<SpriteRenderer>().color = Color.red;
         }
+        
     }
-
+    
     public void setValue(int newValue)
     {
-        value = newValue;
+
+        //checking = true;
+        this.testValue = newValue;
+        //Debug.Log(i + ", " + testValue);
+        i++;
     }
     
 }
