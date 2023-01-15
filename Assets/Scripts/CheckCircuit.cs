@@ -34,12 +34,11 @@ public class CheckCircuit : MonoBehaviour
     {
         testing = true;
         
-        StartCoroutine(TestLightBulb(0, 0, 0, 0f));
-        StartCoroutine(TestLightBulb(0, 1, 1, 1f));
-        StartCoroutine(TestLightBulb(1, 0, 1, 2f));
-        StartCoroutine(TestLightBulb(1, 1, 0, 3f));
-        // StartCoroutine(TestLightBulb(1, 1, 0, 4f));
-        Invoke("method", 4f);
+        StartCoroutine(TestLightBulb(0, 0, 0, 0.0f));
+        StartCoroutine(TestLightBulb(0, 1, 1, 0.1f));
+        StartCoroutine(TestLightBulb(1, 0, 1, 0.2f));
+        StartCoroutine(TestLightBulb(1, 1, 0, 0.3f));
+        Invoke("method", 0.4f);
     }
     private IEnumerator TestLightBulb(int input_1, int input_2, int exp_Output, float time)
     {
@@ -51,8 +50,6 @@ public class CheckCircuit : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         Debug.Log("Test: " + outputValue);
-
-        // outputValue = output.GetComponent<Output>().outputValue;
 
         if (outputValue == exp_Output)
         {
