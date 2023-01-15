@@ -30,12 +30,12 @@ public class Tutorial : MonoBehaviour
 
     public void Tutorial2(){
         
-        SceneManager.LoadScene("Tutorial2");
+        SceneManager.LoadScene("AND_Tutorial");
     }
 
     public void Tutorial3(){
         
-        SceneManager.LoadScene("Tutorial3");
+        SceneManager.LoadScene("OR_Tutorial");
     }
 
     

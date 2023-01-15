@@ -12,7 +12,7 @@ public class StartGame : MonoBehaviour
     }
 
     public void Tutorial(){
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("NOT_Tutorial");
     }
 
     public void ExitGame(){

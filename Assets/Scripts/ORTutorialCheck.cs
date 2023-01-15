@@ -2,25 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Assertions;
-using System.Threading;
-using System.Runtime.ConstrainedExecution;
-
-public class CheckCircuit : MonoBehaviour
+public class ORTutorialCheck : MonoBehaviour
 {
     public InputNode inputNode;
     public InputNode inputNode2;
     public GameObject nextLevel;
-    public GameObject bulb;
     private int outputValue;
-    private int testLight = 0;
+    private int testOr = 0;
     public Output output;
     public GameObject redo;
     public GameObject submit;
     
     void Start()
     {
-        bulb.GetComponent<SpriteRenderer>().color = Color.red;
         nextLevel.SetActive(false);
         Mode.testing = false;
     }
@@ -34,13 +28,13 @@ public class CheckCircuit : MonoBehaviour
     {
         Mode.testing = true;
         
-        StartCoroutine(TestLightBulb(0, 0, 0, 0.0f));
-        StartCoroutine(TestLightBulb(0, 1, 1, 0.1f));
-        StartCoroutine(TestLightBulb(1, 0, 1, 0.2f));
-        StartCoroutine(TestLightBulb(1, 1, 0, 0.3f));
+        StartCoroutine(testOR(0, 0, 0, 0.0f));
+        StartCoroutine(testOR(0, 1, 1, 0.1f));
+        StartCoroutine(testOR(1, 0, 1, 0.2f));
+        StartCoroutine(testOR(1, 1, 1, 0.3f));
         Invoke("method", 0.4f);
     }
-    private IEnumerator TestLightBulb(int input_1, int input_2, int exp_Output, float time)
+    private IEnumerator testOR(int input_1, int input_2, int exp_Output, float time)
     {
         yield return new WaitForSeconds(time);
 
@@ -53,7 +47,7 @@ public class CheckCircuit : MonoBehaviour
 
         if (outputValue == exp_Output)
         {
-            testLight++;
+            testOr++;
         }
     }
 
@@ -70,15 +64,14 @@ public class CheckCircuit : MonoBehaviour
     }
 
     void method() {
-        Debug.Log(testLight);
-        if (testLight == 4)
+        Debug.Log(testOr);
+        if (testOr == 4)
         {
-            bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);
             submit.SetActive(false);
         } else
         {
-            testLight = 0;
+            testOr = 0;
             redo.SetActive(true);
         }
     }
