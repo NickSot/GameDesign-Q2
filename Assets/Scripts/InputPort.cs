@@ -19,7 +19,7 @@ public class InputPort : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         lr.startWidth = lineWidth;
         lr.endWidth = lineWidth;
-        check = FindObjectOfType<CheckCircuit>().GetComponent<CheckCircuit>();
+        //check = FindObjectOfType<CheckCircuit>().GetComponent<CheckCircuit>();
     }
 
     public void Update()
@@ -46,7 +46,7 @@ public class InputPort : MonoBehaviour
     public int GetPortValue()
     {
         
-        if (!check.testing)
+        if (!Mode.testing)
         {
             if (outputTag == "Switch")
             {

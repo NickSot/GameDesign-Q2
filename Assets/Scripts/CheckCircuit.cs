@@ -15,14 +15,13 @@ public class CheckCircuit : MonoBehaviour
     private int outputValue;
     private int testLight = 0;
     public Output output;
-    public bool testing;
     public GameObject redo;
     
     void Start()
     {
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
         nextLevel.SetActive(false);
-        testing = false;
+        Mode.testing = false;
     }
 
     private void Update()
@@ -32,7 +31,7 @@ public class CheckCircuit : MonoBehaviour
 
     public void Submit()
     {
-        testing = true;
+        Mode.testing = true;
         
         StartCoroutine(TestLightBulb(0, 0, 0, 0.0f));
         StartCoroutine(TestLightBulb(0, 1, 1, 0.1f));
@@ -47,7 +46,7 @@ public class CheckCircuit : MonoBehaviour
         inputNode.setValue(input_1);
         inputNode2.setValue(input_2);
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
 
         Debug.Log("Test: " + outputValue);
 
@@ -59,15 +58,14 @@ public class CheckCircuit : MonoBehaviour
 
     public void NextLevel()
     {
-        testing = false;
-        testLight = 0;
+        Mode.testing = false;
         //SceneManager.LoadScene("Map");
     }
 
     public void Redo()
     {
         redo.SetActive(false);
-        testing = false;
+        Mode.testing = false;
     }
 
     void method() {
