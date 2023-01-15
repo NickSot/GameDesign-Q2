@@ -15,6 +15,7 @@ TagManager:
   - QBar
   - NandGate
   - NorGate
+  - OutputTest
   layers:
   - Default
   - TransparentFX

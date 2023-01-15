@@ -10,6 +10,7 @@ public class Output : Component
     public GameObject IPort;
     public TextMeshPro outputText;
     [HideInInspector] public int outputValue;
+    public int testoutputValue;
     void Awake()
     {
         input = IPort.GetComponent<InputPort>();
@@ -47,5 +48,10 @@ public class Output : Component
     public int getValue()
     {
         return outputValue;
+    }
+
+    public void setValue(int newValue) 
+    {
+        testoutputValue = newValue;
     }
 }

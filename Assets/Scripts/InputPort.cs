@@ -82,6 +82,10 @@ public class InputPort : MonoBehaviour
             {
                 return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
             }
+            else if (outputTag == "OutputTest") 
+            {
+                return connectedOutputPort.GetComponentInParent<Output>().outputValue;
+            }
             else
             {
                 return int.MaxValue;
@@ -90,18 +94,15 @@ public class InputPort : MonoBehaviour
         {
             if (outputTag == "Switch")
             {
-                //Debug.Log("hello1, " + connectedOutputPort.GetComponentInParent<InputNode>().testValue);
                 return connectedOutputPort.GetComponentInParent<InputNode>().testValue;
             }
             else if (outputTag == "ANDGate")
             {
-                //Debug.Log("hello4, " + connectedOutputPort.GetComponentInParent<ANDGate>().output);
                 return connectedOutputPort.GetComponentInParent<ANDGate>().output;
             }
 
             else if (outputTag == "ORGate")
             {
-                //Debug.Log("hello2, " + connectedOutputPort.GetComponentInParent<ORGate>().output);
                 return connectedOutputPort.GetComponentInParent<ORGate>().output;
             }
 
@@ -117,13 +118,16 @@ public class InputPort : MonoBehaviour
 
             else if (outputTag == "NOTGate")
             {
-                //Debug.Log("hello3, " + connectedOutputPort.GetComponentInParent<NOT>().output);
                 return connectedOutputPort.GetComponentInParent<NOT>().output;
             }
 
             else if (outputTag == "Clock")
             {
                 return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
+            } 
+            else if (outputTag == "OutputTest")
+            {
+                return connectedOutputPort.GetComponentInParent<Output>().testoutputValue;
             }
             else
             {
