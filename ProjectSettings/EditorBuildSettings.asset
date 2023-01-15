@@ -11,13 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 213b7f86f52c81140a1c09fc8f0292c6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial2.unity
+    guid: 147f14a1ae04d0344a67128d90f309dd
+  - enabled: 1
+    path: Assets/Scenes/Tutorial3.unity
+    guid: b5f54e407dd4d5d45aff2cb76a937b4e
   - enabled: 0
     path: Assets/Scenes/Trial.unity
     guid: ff0375253f762f84eaeefb5d13894bad
   - enabled: 1
     path: Assets/Scenes/CityOverview.unity
     guid: e5b945487734a764bbf1bc74de124a1a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
