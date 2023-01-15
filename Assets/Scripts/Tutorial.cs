@@ -28,9 +28,14 @@ public class Tutorial : MonoBehaviour
         SceneManager.LoadScene("Game Start");
     }
 
-    public void City(){
+    public void Tutorial2(){
         
-        SceneManager.LoadScene("CityOverview");
+        SceneManager.LoadScene("Tutorial2");
+    }
+
+    public void Tutorial3(){
+        
+        SceneManager.LoadScene("Tutorial3");
     }
 
     
