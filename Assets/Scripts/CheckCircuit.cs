@@ -3,112 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
-using System.Diagnostics;
+using System.Threading;
 using System.Runtime.ConstrainedExecution;
 
 public class CheckCircuit : MonoBehaviour
 {
-    public GameObject output;
     public InputNode inputNode;
     public InputNode inputNode2;
     public GameObject nextLevel;
-    //public GameObject submit;
     public GameObject bulb;
-    private int inputValue;
-    private int inputValue2;
     private int outputValue;
     private int testLight = 0;
-    public bool GameRunning;
+    public Output output;
     public bool testing;
-
+    public GameObject redo;
     void Start()
     {
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
         nextLevel.SetActive(false);
+        testing = false;
     }
 
     private void Update()
     {
-       // outputValue = output.GetComponent<Output>().outputValue;
+       outputValue = output.GetComponent<Output>().outputValue;
     }
 
     public void Submit()
     {
-        //Time.timeScale = 0;
         testing = true;
-        
-        if (SceneManager.GetActiveScene().name == "NOTTutorial")
-        {
-            checkNOTTutorial();
-        } else if (SceneManager.GetActiveScene().name == "LightBulb")
-        {
-            checkLightBulb();
-            //UnityEngine.Debug.Log(testLight);
-            if (testLight == 4)
-            {
-                bulb.GetComponent<SpriteRenderer>().color = Color.green;
-                nextLevel.SetActive(true);
-            } else
-            {
-                testLight = 0;
-            }
-        }
-        //testing = false;
-    }
+        StartCoroutine(TestLightBulb(0, 0, 0, 0.0f));
+        StartCoroutine(TestLightBulb(0, 1, 0, 0.1f));
+        StartCoroutine(TestLightBulb(1, 0, 1, 0.2f));
+        StartCoroutine(TestLightBulb(1, 1, 1, 0.3f));
+        StartCoroutine(TestLightBulb(1, 1, 0, 0.4f));
+        Invoke("method", 0.5f);
 
-    void checkNOTTutorial()
+    }
+    private IEnumerator TestLightBulb(int input_1, int input_2, int exp_Output, float time)
     {
-        if (inputValue == 0)
+        yield return new WaitForSeconds(time);
+        inputNode.setValue(input_1);
+        inputNode2.setValue(input_2);
+        Debug.Log("Test: " + outputValue);
+        if (outputValue == exp_Output)
         {
-            if (outputValue == 1)
-            {
-                bulb.GetComponent<SpriteRenderer>().color = Color.green;
-                nextLevel.SetActive(true);
-            } 
-        } else if (inputValue == 1)
-        {
-            if (outputValue == 0)
-            {
-                bulb.GetComponent<SpriteRenderer>().color = Color.green;
-                nextLevel.SetActive(true);
-            }
+            testLight++;
         }
     }
-
-    void checkLightBulb()
+    public void NextLevel()
     {
-        inputNode.setValue(0);
-        inputNode2.setValue(0);
-        outputValue = output.GetComponent<Output>().outputValue;
-        UnityEngine.Debug.Log("First: "+ outputValue);
-        if (outputValue == 0)
+        testing = false;
+        testLight = 0;
+        //SceneManager.LoadScene("Map");
+    }
+
+    public void Redo()
+    {
+        redo.SetActive(false);
+        testing = false;
+    }
+
+    void method() {
+        Debug.Log(testLight);
+        if (testLight == 5)
         {
-            testLight++;
-        }
-        inputNode.setValue(0);
-        inputNode2.setValue(1);
-        outputValue = output.GetComponent<Output>().outputValue;
-        UnityEngine.Debug.Log("Second: " + outputValue);
-        if (outputValue == 1)
+            bulb.GetComponent<SpriteRenderer>().color = Color.green;
+            nextLevel.SetActive(true);
+        } else
         {
-            testLight++;
+            testLight = 0;
+            redo.SetActive(true);
         }
-        inputNode.setValue(1);
-        inputNode2.setValue(0);
-        outputValue = output.GetComponent<Output>().outputValue;
-        UnityEngine.Debug.Log("Third: " + outputValue);
-        if (outputValue == 1)
-        {
-            testLight++;
-        }
-        inputNode.setValue(1);
-        inputNode2.setValue(1);
-        outputValue = output.GetComponent<Output>().outputValue;
-        UnityEngine.Debug.Log("Fourth: " + outputValue);
-        if (outputValue == 0)
-        {
-            testLight++;
-        }
-        //UnityEngine.Debug.Log("4" + testLight);
     }
 }

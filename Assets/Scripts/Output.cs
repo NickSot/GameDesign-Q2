@@ -43,4 +43,9 @@ public class Output : Component
             this.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
+
+    public int getValue()
+    {
+        return outputValue;
+    }
 }
