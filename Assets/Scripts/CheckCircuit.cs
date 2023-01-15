@@ -16,12 +16,12 @@ public class CheckCircuit : MonoBehaviour
     private int testLight = 0;
     public Output output;
     public bool testing;
-    private int current;
     public GameObject redo;
     void Start()
     {
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
         nextLevel.SetActive(false);
+        testing = false;
     }
 
     private void Update()
@@ -32,16 +32,30 @@ public class CheckCircuit : MonoBehaviour
     public void Submit()
     {
         testing = true;
-        
-        if (SceneManager.GetActiveScene().name == "LightBulb")
+        StartCoroutine(TestLightBulb(0, 0, 0, 0.0f));
+        StartCoroutine(TestLightBulb(0, 1, 0, 0.1f));
+        StartCoroutine(TestLightBulb(1, 0, 1, 0.2f));
+        StartCoroutine(TestLightBulb(1, 1, 1, 0.3f));
+        StartCoroutine(TestLightBulb(1, 1, 0, 0.4f));
+        Invoke("method", 0.5f);
+
+    }
+    private IEnumerator TestLightBulb(int input_1, int input_2, int exp_Output, float time)
+    {
+        yield return new WaitForSeconds(time);
+        inputNode.setValue(input_1);
+        inputNode2.setValue(input_2);
+        Debug.Log("Test: " + outputValue);
+        if (outputValue == exp_Output)
         {
-            Invoke("test1", 0.0f);
-            Invoke("test2", 0.1f);
-            Invoke("test3", 0.2f);
-            Invoke("test4", 0.3f);
-            Invoke("test5", 0.4f);
-            Invoke("method", 0.5f);
+            testLight++;
         }
+    }
+    public void NextLevel()
+    {
+        testing = false;
+        testLight = 0;
+        //SceneManager.LoadScene("Map");
     }
 
     public void Redo()
@@ -52,7 +66,7 @@ public class CheckCircuit : MonoBehaviour
 
     void method() {
         Debug.Log(testLight);
-        if (testLight == 4)
+        if (testLight == 5)
         {
             bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);
@@ -60,64 +74,6 @@ public class CheckCircuit : MonoBehaviour
         {
             testLight = 0;
             redo.SetActive(true);
-        }
-    }
-    void test1()
-    {
-        inputNode.setValue(0);
-        inputNode2.setValue(0);
-        current = outputValue;
-        
-        Debug.Log("Test 1: " + outputValue);
-    }
-    void test2()
-    {
-        inputNode.setValue(0);
-        inputNode2.setValue(1);
-        current = outputValue;
-        Debug.Log("Test 2: " + outputValue);
-
-        if (current == 0)
-        {
-            testLight++;
-        }
-    }
-     void test3()
-    {
-        inputNode.setValue(1);
-        inputNode2.setValue(0);
-        current = outputValue;
-        Debug.Log("Test 3: " + outputValue); 
-
-        if (current == 1)
-        {
-            testLight++;
-        }
-    }
-
-    void test4() 
-    {
-        inputNode.setValue(1);
-        inputNode2.setValue(1);
-        current = outputValue;
-        Debug.Log("Test 4: " + outputValue);
-
-        if (current == 1)
-        {
-            testLight++;
-        }
-    }
-
-    void test5() 
-    {
-        inputNode.setValue(1);
-        inputNode2.setValue(1);
-        current = outputValue;
-        Debug.Log("Test 4: " + outputValue);
-
-        if (current == 0)
-        {
-            testLight++;
         }
     }
 }
