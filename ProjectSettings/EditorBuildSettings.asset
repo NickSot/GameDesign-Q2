@@ -9,14 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Start.unity
     guid: 6e19578b978f9cf48aaa7a6bf46137d3
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/NOT_Tutorial.unity
     guid: 213b7f86f52c81140a1c09fc8f0292c6
   - enabled: 1
+    path: Assets/Scenes/AND_Tutorial.unity
+    guid: d10bfbb73c53a76479055eb5b2253501
+  - enabled: 1
+    path: Assets/Scenes/OR_Tutorial.unity
+    guid: 32c48d8ba1d6a1d439de3e4d6285bdac
+  - enabled: 0
     path: Assets/Scenes/Tutorial2.unity
     guid: 147f14a1ae04d0344a67128d90f309dd
-  - enabled: 1
-    path: Assets/Scenes/Tutorial3.unity
-    guid: b5f54e407dd4d5d45aff2cb76a937b4e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Trial.unity
     guid: ff0375253f762f84eaeefb5d13894bad
