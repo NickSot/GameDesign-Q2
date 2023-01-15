@@ -17,6 +17,7 @@ public class CheckCircuit : MonoBehaviour
     public Output output;
     public bool testing;
     public GameObject redo;
+    
     void Start()
     {
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
@@ -32,25 +33,33 @@ public class CheckCircuit : MonoBehaviour
     public void Submit()
     {
         testing = true;
-        StartCoroutine(TestLightBulb(0, 0, 0, 0.0f));
-        StartCoroutine(TestLightBulb(0, 1, 0, 0.1f));
-        StartCoroutine(TestLightBulb(1, 0, 1, 0.2f));
-        StartCoroutine(TestLightBulb(1, 1, 1, 0.3f));
-        StartCoroutine(TestLightBulb(1, 1, 0, 0.4f));
-        Invoke("method", 0.5f);
-
+        
+        StartCoroutine(TestLightBulb(0, 0, 0, 0f));
+        StartCoroutine(TestLightBulb(0, 1, 1, 1f));
+        StartCoroutine(TestLightBulb(1, 0, 1, 2f));
+        StartCoroutine(TestLightBulb(1, 1, 0, 3f));
+        // StartCoroutine(TestLightBulb(1, 1, 0, 4f));
+        Invoke("method", 4f);
     }
     private IEnumerator TestLightBulb(int input_1, int input_2, int exp_Output, float time)
     {
         yield return new WaitForSeconds(time);
+
         inputNode.setValue(input_1);
         inputNode2.setValue(input_2);
+
+        yield return new WaitForSeconds(0.1f);
+
         Debug.Log("Test: " + outputValue);
+
+        // outputValue = output.GetComponent<Output>().outputValue;
+
         if (outputValue == exp_Output)
         {
             testLight++;
         }
     }
+
     public void NextLevel()
     {
         testing = false;
@@ -66,7 +75,7 @@ public class CheckCircuit : MonoBehaviour
 
     void method() {
         Debug.Log(testLight);
-        if (testLight == 5)
+        if (testLight == 4)
         {
             bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);
