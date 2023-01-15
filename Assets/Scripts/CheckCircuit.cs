@@ -12,21 +12,16 @@ public class CheckCircuit : MonoBehaviour
     public InputNode inputNode2;
     public GameObject nextLevel;
     public GameObject bulb;
-    private int outputValue;
+    //private int outputValue;
     private int testLight = 0;
     public Output output;
-    public bool testing;
+    public bool testing = false;
     public GameObject redo;
+
     void Start()
     {
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
         nextLevel.SetActive(false);
-        testing = false;
-    }
-
-    private void Update()
-    {
-       outputValue = output.GetComponent<Output>().outputValue;
     }
 
     public void Submit()
@@ -45,6 +40,7 @@ public class CheckCircuit : MonoBehaviour
         yield return new WaitForSeconds(time);
         inputNode.setValue(input_1);
         inputNode2.setValue(input_2);
+        int outputValue = output.getValue();
         Debug.Log("Test: " + outputValue);
         if (outputValue == exp_Output)
         {
@@ -64,13 +60,15 @@ public class CheckCircuit : MonoBehaviour
         testing = false;
     }
 
-    void method() {
+    void method()
+    {
         Debug.Log(testLight);
         if (testLight == 5)
         {
             bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);
-        } else
+        }
+        else
         {
             testLight = 0;
             redo.SetActive(true);
