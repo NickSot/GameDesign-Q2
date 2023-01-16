@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    void Start() 
+    void Awake() 
     {
-        //if (PlayerPrefs.GetFloat("", 0) == 0) 
-        //{
+        if (PlayerPrefs.GetFloat("", 0) == 0) 
+        {
         PlayerPrefs.SetFloat("", 0);
-        //}
+        }
 
         PlayerPrefs.SetFloat("Completed", 0);
         PlayerPrefs.SetInt("CompletedWater1", 0);

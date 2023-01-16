@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
         score = PlayerPrefs.GetFloat("");
         score += PlayerPrefs.GetFloat("Completed");
         score = ((score / 19) * 100);
-        scoreText.text = score + "";
+        scoreText.text = "Your Grade is: " + score + "%";
         checkScore();
     }
 
