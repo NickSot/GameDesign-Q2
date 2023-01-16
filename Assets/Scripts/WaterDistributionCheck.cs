@@ -20,10 +20,10 @@ public class WaterDistributionCheck : MonoBehaviour
         Mode.testing = false;
         if (SceneManager.GetActiveScene().name == "WaterDistribution") 
         {
-            PlayerPrefs.SetInt("Water", 0);
+            PlayerPrefs.SetInt("Water", 1);
         } else if (SceneManager.GetActiveScene().name == "WaterDistribution 1") 
         {
-            PlayerPrefs.SetInt("Water", 1);
+            PlayerPrefs.SetInt("Water", 2);
         }
     }
 
@@ -82,12 +82,12 @@ public class WaterDistributionCheck : MonoBehaviour
         if (testW == 8)
         {
             PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 5));
-            if (PlayerPrefs.GetInt("Water") == 0) 
-            {
-                PlayerPrefs.SetInt("CompletedWater", 0);
-            } else if (PlayerPrefs.GetInt("Water") == 1)
+            if (PlayerPrefs.GetInt("Water") == 1) 
             {
                 PlayerPrefs.SetInt("CompletedWater", 1);
+            } else if (PlayerPrefs.GetInt("Water") == 2)
+            {
+                PlayerPrefs.SetInt("CompletedWater", 2);
             }
             nextLevel.SetActive(true);
             submit.SetActive(false);

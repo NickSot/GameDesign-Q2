@@ -25,10 +25,10 @@ public class CheckCircuit : MonoBehaviour
         Mode.testing = false;
         if (SceneManager.GetActiveScene().name == "LightBulb") 
         {
-            PlayerPrefs.SetInt("Light", 0);
+            PlayerPrefs.SetInt("Light", 1);
         } else if (SceneManager.GetActiveScene().name == "LightBulb 1") 
         {
-            PlayerPrefs.SetInt("Light", 1);
+            PlayerPrefs.SetInt("Light", 2);
         }
     }
 
@@ -81,12 +81,12 @@ public class CheckCircuit : MonoBehaviour
         if (testLight == 4)
         {
             PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 3));
-            if (PlayerPrefs.GetInt("Light") == 0) 
-            {
-                PlayerPrefs.SetInt("CompletedLight", 0);
-            } else if (PlayerPrefs.GetInt("Light") == 1)
+            if (PlayerPrefs.GetInt("Light") == 1) 
             {
                 PlayerPrefs.SetInt("CompletedLight", 1);
+            } else if (PlayerPrefs.GetInt("Light") == 2)
+            {
+                PlayerPrefs.SetInt("CompletedLight", 2);
             }
             bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);

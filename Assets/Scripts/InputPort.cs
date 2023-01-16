@@ -82,10 +82,6 @@ public class InputPort : MonoBehaviour
             {
                 return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
             }
-            else if (outputTag == "OutputTest") 
-            {
-                return connectedOutputPort.GetComponentInParent<Output>().outputValue;
-            }
             else
             {
                 return int.MaxValue;
@@ -125,10 +121,6 @@ public class InputPort : MonoBehaviour
             {
                 return connectedOutputPort.GetComponentInParent<Clock>().clockValue;
             } 
-            else if (outputTag == "OutputTest")
-            {
-                return connectedOutputPort.GetComponentInParent<Output>().testoutputValue;
-            }
             else
             {
                 return int.MaxValue;

@@ -50,8 +50,4 @@ public class Output : Component
         return outputValue;
     }
 
-    public void setValue(int newValue) 
-    {
-        testoutputValue = newValue;
-    }
 }
