@@ -24,13 +24,9 @@ public class MapClick : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(mousePos);
-            Debug.Log(level.transform.position);
-
             if ((mousePos.x > level.transform.position.x - level.transform.localScale.x && mousePos.x < level.transform.position.x + level.transform.localScale.x)
                 && (mousePos.y > level.transform.position.y - level.transform.localScale.y && mousePos.y < level.transform.position.y + level.transform.localScale.y))
             {
-                Debug.Log(levelName);
                 SceneManager.LoadScene(levelName);
             }
         }
