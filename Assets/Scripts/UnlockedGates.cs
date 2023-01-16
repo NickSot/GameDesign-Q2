@@ -13,6 +13,7 @@ public class UnlockedGates : MonoBehaviour
         NOT.SetActive(false);
         AND.SetActive(false);
         OR.SetActive(false);
+        checkScene();
     }
 
     void Unlocked() 
@@ -34,14 +35,13 @@ public class UnlockedGates : MonoBehaviour
 
     void checkScene() 
     {
-        if (SceneManager.GetActiveScene().name == "LightBulb" || SceneManager.GetActiveScene().name == "WaterDistribution") 
+        if (SceneManager.GetActiveScene().name == "LightBulb" || SceneManager.GetActiveScene().name == "WaterDistribution" 
+            || SceneManager.GetActiveScene().name == "LightBulb 1" || SceneManager.GetActiveScene().name == "WaterDistribution 1") 
         {
-            //Debug.Log("hi");
             if (PlayerPrefs.GetFloat("") < 3) 
             {
-                //Debug.Log("hi2");
                 message.SetActive(true);
-            }
+            } 
         }
     }
 
@@ -53,6 +53,5 @@ public class UnlockedGates : MonoBehaviour
     void Update()
     {
         Unlocked();
-        checkScene();
     }
 }
