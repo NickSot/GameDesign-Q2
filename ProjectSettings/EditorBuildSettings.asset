@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LightBulb.unity
     guid: c2aa1d5bfc983014cb2668834c4f7dc4
+  - enabled: 1
+    path: Assets/Scenes/WaterDistribution 1.unity
+    guid: d1375d8887820e148ad820f1ee65f482
+  - enabled: 1
+    path: Assets/Scenes/LightBulb 1.unity
+    guid: e8fdabce358385347974d495030ce8a8
   m_configObjects: {}

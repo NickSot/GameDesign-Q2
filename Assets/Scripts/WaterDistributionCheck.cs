@@ -6,11 +6,10 @@ public class WaterDistributionCheck : MonoBehaviour
 {
     public InputNode inputNode;
     public InputNode inputNode2;
-    public Output outputNode;
-    public Output outputNode2;
+    public InputNode inputNode3;
     public GameObject nextLevel;
     private int outputValue;
-    private int testff = 0;
+    private int testW = 0;
     public Output output;
     public GameObject redo;
     public GameObject submit;
@@ -19,6 +18,13 @@ public class WaterDistributionCheck : MonoBehaviour
     {
         nextLevel.SetActive(false);
         Mode.testing = false;
+        if (SceneManager.GetActiveScene().name == "WaterDistribution") 
+        {
+            PlayerPrefs.SetInt("Water", 0);
+        } else if (SceneManager.GetActiveScene().name == "WaterDistribution 1") 
+        {
+            PlayerPrefs.SetInt("Water", 1);
+        }
     }
 
     private void Update()
@@ -30,40 +36,24 @@ public class WaterDistributionCheck : MonoBehaviour
     {
         Mode.testing = true;
         
-        // StartCoroutine(testFF(0, 0, 0, 0.0f));
-        // StartCoroutine(testFF(0, 1, 0, 0.1f));
-        // StartCoroutine(testFF(1, 0, 0, 0.2f));
-        // StartCoroutine(testFF(1, 1, 0, 0.3f));
-        // StartCoroutine(testFF(0, 0, 1, 0.4f));
-        // StartCoroutine(testFF(0, 1, 1, 0.5f));
-        // StartCoroutine(testFF(1, 0, 1, 0.6f));
-        // StartCoroutine(testFF(1, 1, 1, 0.7f));
-        // StartCoroutine(testFF(0, 0, 1, 0.8f));
-        // StartCoroutine(testFF(0, 1, 1, 0.9f));
-        // StartCoroutine(testFF(1, 0, 1, 1f));
-        // StartCoroutine(testFF(1, 1, 1, 1.1f));
-        StartCoroutine(testFF(0, 0, 0, 0, 0, 0.0f));
-        StartCoroutine(testFF(0, 0, 0, 1, 0, 0.1f));
-        StartCoroutine(testFF(0, 0, 1, 0, 0, 0.2f));
-        StartCoroutine(testFF(0, 0, 1, 1, 0, 0.3f));
-        StartCoroutine(testFF(0, 1, 0, 0, 1, 0.4f));
-        StartCoroutine(testFF(0, 1, 0, 1, 1, 0.5f));
-        StartCoroutine(testFF(0, 1, 1, 0, 1, 0.6f));
-        StartCoroutine(testFF(0, 1, 1, 1, 1, 0.7f));
-        StartCoroutine(testFF(1, 0, 0, 0, 1, 0.8f));
-        StartCoroutine(testFF(1, 0, 0, 1, 1, 0.9f));
-        StartCoroutine(testFF(1, 0, 1, 0, 1, 1f));
-        StartCoroutine(testFF(1, 0, 1, 1, 1, 1.1f));
-        Invoke("method", 1.2f);
+        StartCoroutine(testWater(0, 0, 0, 0, 0.0f));
+        StartCoroutine(testWater(0, 0, 1, 1, 0.1f));
+        StartCoroutine(testWater(0, 1, 0, 0, 0.2f));
+        StartCoroutine(testWater(0, 1, 1, 0, 0.3f));
+        StartCoroutine(testWater(1, 0, 0, 0, 0.4f));
+        StartCoroutine(testWater(1, 0, 1, 1, 0.5f));
+        StartCoroutine(testWater(1, 1, 0, 1, 0.6f));
+        StartCoroutine(testWater(1, 1, 1, 1, 0.7f));
+        
+        Invoke("method", 0.8f);
     }
-    private IEnumerator testFF(int input_1, int input_2, int input_3, int input_4, int exp_Output, float time)
+    private IEnumerator testWater(int input_1, int input_2, int input_3, int exp_Output, float time)
     {
         yield return new WaitForSeconds(time);
 
-        inputNode.setValue(input_3);
-        inputNode2.setValue(input_4);
-        outputNode.setValue(input_1);
-        outputNode2.setValue(input_2);
+        inputNode.setValue(input_1);
+        inputNode2.setValue(input_2);
+        inputNode3.setValue(input_3);
         
         yield return new WaitForSeconds(0.01f);
 
@@ -71,7 +61,7 @@ public class WaterDistributionCheck : MonoBehaviour
 
         if (outputValue == exp_Output)
         {
-            testff++;
+            testW++;
         }
     }
 
@@ -88,15 +78,22 @@ public class WaterDistributionCheck : MonoBehaviour
     }
 
     void method() {
-        Debug.Log(testff);
-        if (testff == 12)
+        Debug.Log(testW);
+        if (testW == 8)
         {
             PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 5));
+            if (PlayerPrefs.GetInt("Water") == 0) 
+            {
+                PlayerPrefs.SetInt("CompletedWater", 0);
+            } else if (PlayerPrefs.GetInt("Water") == 1)
+            {
+                PlayerPrefs.SetInt("CompletedWater", 1);
+            }
             nextLevel.SetActive(true);
             submit.SetActive(false);
         } else
         {
-            testff = 0;
+            testW = 0;
             redo.SetActive(true);
         }
     }

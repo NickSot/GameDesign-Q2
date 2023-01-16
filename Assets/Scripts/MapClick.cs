@@ -24,13 +24,9 @@ public class MapClick : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(mousePos);
-            Debug.Log(level.transform.position);
-
             if ((mousePos.x > level.transform.position.x - level.transform.localScale.x && mousePos.x < level.transform.position.x + level.transform.localScale.x)
                 && (mousePos.y > level.transform.position.y - level.transform.localScale.y && mousePos.y < level.transform.position.y + level.transform.localScale.y))
             {
-                Debug.Log(levelName);
                 SceneManager.LoadScene(levelName);
             }
         }
@@ -47,9 +43,9 @@ public class MapClick : MonoBehaviour
 
         // Load the levels, based on the position of the mouse on the map
         // TODO: Change the names of the scenes according to their purposes
-        LoadLevel(mousePos, sewers, 7);
+        LoadLevel(mousePos, sewers, 6);
         LoadLevel(mousePos, lights, 7);
-        LoadLevel(mousePos, factory, 6);
-        LoadLevel(mousePos, secondLights, 7);
+        LoadLevel(mousePos, factory, 8);
+        LoadLevel(mousePos, secondLights, 9);
     }
 }

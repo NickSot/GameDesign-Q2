@@ -13,6 +13,8 @@ public class StartGame : MonoBehaviour
         }
 
         PlayerPrefs.SetFloat("Completed", 0);
+        PlayerPrefs.SetInt("CompletedWater", 5);
+        PlayerPrefs.SetInt("CompletedLight", 5);
     }
 
     public void GameStart(){
