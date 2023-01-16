@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MapClick : MonoBehaviour
 {
+    GameObject sewers;
+    GameObject lights;
+    GameObject factory;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        sewers = GameObject.Find("Sewers");
+        lights = GameObject.Find("LightFix");
+        factory = GameObject.Find("Factory");
     }
 
     // function that compares the positions of the mouse and the level placeholders
-    void LoadLevel(Vector3 mousePos, GameObject level, string levelName)
+    void LoadLevel(Vector3 mousePos, GameObject level, int levelName)
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -29,14 +34,14 @@ public class MapClick : MonoBehaviour
     {
         // initialize the mouse position and the level placeholder positions
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        GameObject sewers = GameObject.Find("Sewers");
-        GameObject lights = GameObject.Find("LightFix");
-        GameObject factory = GameObject.Find("Factory");
+        // GameObject sewers = GameObject.Find("Sewers");
+        // GameObject lights = GameObject.Find("LightFix");
+        // GameObject factory = GameObject.Find("Factory");
 
         // Load the levels, based on the position of the mouse on the map
         // TODO: Change the names of the scenes according to their purposes
-        LoadLevel(mousePos, sewers, "SampleScene");
-        LoadLevel(mousePos, lights, "SampleScene");
-        LoadLevel(mousePos, factory, "SampleScene");
+        LoadLevel(mousePos, sewers, 6);
+        LoadLevel(mousePos, lights, 7);
+        LoadLevel(mousePos, factory, 6);
     }
 }
