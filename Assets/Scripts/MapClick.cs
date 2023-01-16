@@ -40,8 +40,8 @@ public class MapClick : MonoBehaviour
 
         // Load the levels, based on the position of the mouse on the map
         // TODO: Change the names of the scenes according to their purposes
-        LoadLevel(mousePos, sewers, 6);
+        LoadLevel(mousePos, sewers, 7);
         LoadLevel(mousePos, lights, 7);
-        LoadLevel(mousePos, factory, 6);
+        LoadLevel(mousePos, factory, 7);
     }
 }

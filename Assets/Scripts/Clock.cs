@@ -11,7 +11,7 @@ public class Clock : Component
     void Start()
     {
         clockValue = 0;
-        InvokeRepeating("ClockSwitch", 0f, 1f);
+        InvokeRepeating("ClockSwitch", 0f, 0.1f);
         clockText.text = clockValue + "";
         
     }

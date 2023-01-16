@@ -30,18 +30,30 @@ public class WaterDistributionCheck : MonoBehaviour
     {
         Mode.testing = true;
         
+        // StartCoroutine(testFF(0, 0, 0, 0.0f));
+        // StartCoroutine(testFF(0, 1, 0, 0.1f));
+        // StartCoroutine(testFF(1, 0, 0, 0.2f));
+        // StartCoroutine(testFF(1, 1, 0, 0.3f));
+        // StartCoroutine(testFF(0, 0, 1, 0.4f));
+        // StartCoroutine(testFF(0, 1, 1, 0.5f));
+        // StartCoroutine(testFF(1, 0, 1, 0.6f));
+        // StartCoroutine(testFF(1, 1, 1, 0.7f));
+        // StartCoroutine(testFF(0, 0, 1, 0.8f));
+        // StartCoroutine(testFF(0, 1, 1, 0.9f));
+        // StartCoroutine(testFF(1, 0, 1, 1f));
+        // StartCoroutine(testFF(1, 1, 1, 1.1f));
         StartCoroutine(testFF(0, 0, 0, 0, 0, 0.0f));
-        StartCoroutine(testFF(0, 0, 0, 1, 1, 0.1f));
-        StartCoroutine(testFF(0, 0, 1, 0, 1, 0.2f));
-        StartCoroutine(testFF(0, 0, 1, 1, 1, 0.3f));
-        StartCoroutine(testFF(0, 1, 0, 0, 0, 0.4f));
+        StartCoroutine(testFF(0, 0, 0, 1, 0, 0.1f));
+        StartCoroutine(testFF(0, 0, 1, 0, 0, 0.2f));
+        StartCoroutine(testFF(0, 0, 1, 1, 0, 0.3f));
+        StartCoroutine(testFF(0, 1, 0, 0, 1, 0.4f));
         StartCoroutine(testFF(0, 1, 0, 1, 1, 0.5f));
-        StartCoroutine(testFF(0, 1, 1, 0, 0, 0.6f));
+        StartCoroutine(testFF(0, 1, 1, 0, 1, 0.6f));
         StartCoroutine(testFF(0, 1, 1, 1, 1, 0.7f));
-        StartCoroutine(testFF(1, 0, 0, 0, 0, 0.8f));
-        StartCoroutine(testFF(1, 0, 0, 1, 0, 0.9f));
+        StartCoroutine(testFF(1, 0, 0, 0, 1, 0.8f));
+        StartCoroutine(testFF(1, 0, 0, 1, 1, 0.9f));
         StartCoroutine(testFF(1, 0, 1, 0, 1, 1f));
-        StartCoroutine(testFF(1, 0, 1, 1, 0, 1.1f));
+        StartCoroutine(testFF(1, 0, 1, 1, 1, 1.1f));
         Invoke("method", 1.2f);
     }
     private IEnumerator testFF(int input_1, int input_2, int input_3, int input_4, int exp_Output, float time)
@@ -52,7 +64,7 @@ public class WaterDistributionCheck : MonoBehaviour
         inputNode2.setValue(input_4);
         outputNode.setValue(input_1);
         outputNode2.setValue(input_2);
-
+        
         yield return new WaitForSeconds(0.01f);
 
         Debug.Log("Test: " + outputValue);
@@ -79,6 +91,7 @@ public class WaterDistributionCheck : MonoBehaviour
         Debug.Log(testff);
         if (testff == 12)
         {
+            PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 5));
             nextLevel.SetActive(true);
             submit.SetActive(false);
         } else

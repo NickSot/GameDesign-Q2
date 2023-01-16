@@ -73,6 +73,7 @@ public class CheckCircuit : MonoBehaviour
         Debug.Log(testLight);
         if (testLight == 4)
         {
+            PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 3));
             bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);
             submit.SetActive(false);
