@@ -13,6 +13,7 @@ public class WaterDistributionCheck : MonoBehaviour
     public Output output;
     public GameObject redo;
     public GameObject submit;
+    public GameObject Exit;
     
     void Start()
     {
@@ -77,7 +78,8 @@ public class WaterDistributionCheck : MonoBehaviour
         Mode.testing = false;
     }
 
-    void method() {
+    void method() 
+    {
         Debug.Log(testW);
         if (testW == 8)
         {
@@ -91,10 +93,17 @@ public class WaterDistributionCheck : MonoBehaviour
             }
             nextLevel.SetActive(true);
             submit.SetActive(false);
+            Exit.SetActive(false);
         } else
         {
             testW = 0;
             redo.SetActive(true);
         }
+    }
+
+    public void exit() 
+    {
+        Mode.testing = false;
+        SceneManager.LoadScene("CityOverview");
     }
 }
