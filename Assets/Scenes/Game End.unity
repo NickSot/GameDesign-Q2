@@ -651,7 +651,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -23, y: -21.699997}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 367.6, y: 49.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &728082973
 MonoBehaviour:
@@ -686,7 +686,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Excellent
+  m_Text: Your level is excellent. Good Job! We are looking for smart students like
+    you to join our community!
 --- !u!222 &728082974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -811,7 +812,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16, y: -21.699997}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 367.6, y: 49.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774275163
 MonoBehaviour:
@@ -846,7 +847,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Good
+  m_Text: Your level is good, you are on the right track to join the TU/e community.
+    Play again to increase your score.
 --- !u!222 &774275164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1043,7 +1045,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16, y: -21.699997}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 367.6, y: 49.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620282493
 MonoBehaviour:
@@ -1078,7 +1080,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Average
+  m_Text: Your level is average. Practice with more logic circuits to qualify for
+    joining the TU/e community
 --- !u!222 &1620282494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1122,8 +1125,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: -21.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -11.1487, y: -24.585009}
+  m_SizeDelta: {x: 367.6321, y: 49.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716410752
 MonoBehaviour:
@@ -1158,7 +1161,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Not good
+  m_Text: Your level is low, practice with more logic circuits to qualify for joining
+    the TU/e community.
 --- !u!222 &1716410753
 CanvasRenderer:
   m_ObjectHideFlags: 0

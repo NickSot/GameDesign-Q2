@@ -1665,9 +1665,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Welcome to Tutorial Level. \nIn this level, you are asked to design an
-    OR gate using the gates provided.\n\nHint: The inputs of the NAND gate must be
-    inverted.\n\nOnce you design the gates, press submit to check whether your solution
-    is correct. \n\nTo close the Information, click on the INFO button. "
+    OR gate using the gates provided.\n\nHint: The NOR gate is designed by inverting
+    the output of the OR gate.\n\nOnce you design the gates, press submit to check
+    whether your solution is correct. \n\nTo close the Information, click on the
+    INFO button. "
 --- !u!222 &1927103476
 CanvasRenderer:
   m_ObjectHideFlags: 0
