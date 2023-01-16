@@ -45,7 +45,7 @@ public class MapClick : MonoBehaviour
         // TODO: Change the names of the scenes according to their purposes
         LoadLevel(mousePos, sewers, 6);
         LoadLevel(mousePos, lights, 7);
-        LoadLevel(mousePos, factory, 6);
-        LoadLevel(mousePos, secondLights, 7);
+        LoadLevel(mousePos, factory, 8);
+        LoadLevel(mousePos, secondLights, 9);
     }
 }

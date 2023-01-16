@@ -65,10 +65,12 @@ public class NotTutorialCheck : MonoBehaviour
         {
             nextLevel.SetActive(true);
             submit.SetActive(false);
+            PlayerPrefs.SetFloat("", 1);
         } else
         {
             testNot = 0;
             redo.SetActive(true);
+            PlayerPrefs.SetFloat("", 0);
         }
     }
 }

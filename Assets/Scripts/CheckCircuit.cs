@@ -23,6 +23,13 @@ public class CheckCircuit : MonoBehaviour
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
         nextLevel.SetActive(false);
         Mode.testing = false;
+        if (SceneManager.GetActiveScene().name == "LightBulb") 
+        {
+            PlayerPrefs.SetInt("Light", 0);
+        } else if (SceneManager.GetActiveScene().name == "LightBulb 1") 
+        {
+            PlayerPrefs.SetInt("Light", 1);
+        }
     }
 
     private void Update()
@@ -73,6 +80,14 @@ public class CheckCircuit : MonoBehaviour
         Debug.Log(testLight);
         if (testLight == 4)
         {
+            PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 3));
+            if (PlayerPrefs.GetInt("Light") == 0) 
+            {
+                PlayerPrefs.SetInt("CompletedLight", 0);
+            } else if (PlayerPrefs.GetInt("Light") == 1)
+            {
+                PlayerPrefs.SetInt("CompletedLight", 1);
+            }
             bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);
             submit.SetActive(false);

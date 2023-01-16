@@ -69,6 +69,7 @@ public class ANDTutorialCheck : MonoBehaviour
         {
             nextLevel.SetActive(true);
             submit.SetActive(false);
+            PlayerPrefs.SetFloat("", 2);
         } else
         {
             testAnd = 0;

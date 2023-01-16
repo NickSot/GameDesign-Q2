@@ -5,7 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    // Start is called before the first frame update
+    void Start() 
+    {
+        if (PlayerPrefs.GetFloat("", 0) == 0) 
+        {
+            PlayerPrefs.SetFloat("", 0);
+        }
+
+        PlayerPrefs.SetFloat("Completed", 0);
+        PlayerPrefs.SetInt("CompletedWater", 5);
+        PlayerPrefs.SetInt("CompletedLight", 5);
+    }
 
     public void GameStart(){
         SceneManager.LoadScene("CityOverview");

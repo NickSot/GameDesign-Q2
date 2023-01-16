@@ -69,6 +69,7 @@ public class ORTutorialCheck : MonoBehaviour
         {
             nextLevel.SetActive(true);
             submit.SetActive(false);
+            PlayerPrefs.SetFloat("", 3);
         } else
         {
             testOr = 0;
