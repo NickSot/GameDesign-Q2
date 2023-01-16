@@ -1602,9 +1602,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Welcome to Tutorial Level.\n\nIn this level, you are asked to build an
     AND gate using the gates provided. \n\nHint: A NAND gate is designed by inverting
-    the input of an AND gate.\n\nOnce you design all of the gates, press submit to
-    check whether your solution is correct.\n\nTo close the Information, click on
-    the INFO button. "
+    the output of an AND gate.\n\nOnce you design all of the gates, press submit
+    to check whether your solution is correct.\n\nTo close the Information, click
+    on the INFO button. "
 --- !u!222 &1927103476
 CanvasRenderer:
   m_ObjectHideFlags: 0
