@@ -16,18 +16,20 @@ public class ActivateLevels : MonoBehaviour
 
     void checkLevels() 
     {
-        if (PlayerPrefs.GetInt("CompletedWater") == 1) 
+        if (PlayerPrefs.GetInt("CompletedWater1") == 1) 
         {
             sewers.SetActive(false);
-        } else if (PlayerPrefs.GetInt("CompletedWater") == 2) 
+        }  
+        if (PlayerPrefs.GetInt("CompletedWater2") == 2) 
         {
             sewers2.SetActive(false);
         }
 
-        if (PlayerPrefs.GetInt("CompletedLight") == 1) 
+        if (PlayerPrefs.GetInt("CompletedLight1") == 1) 
         {
             lights.SetActive(false);
-        } else if (PlayerPrefs.GetInt("CompletedLight") == 2) 
+        }  
+        if (PlayerPrefs.GetInt("CompletedLight2") == 2) 
         {
             lights2.SetActive(false);
         }

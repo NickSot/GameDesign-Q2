@@ -7,14 +7,16 @@ public class StartGame : MonoBehaviour
 {
     void Start() 
     {
-        if (PlayerPrefs.GetFloat("", 0) == 0) 
-        {
-            PlayerPrefs.SetFloat("", 0);
-        }
+        //if (PlayerPrefs.GetFloat("", 0) == 0) 
+        //{
+        PlayerPrefs.SetFloat("", 0);
+        //}
 
         PlayerPrefs.SetFloat("Completed", 0);
-        PlayerPrefs.SetInt("CompletedWater", 5);
-        PlayerPrefs.SetInt("CompletedLight", 5);
+        PlayerPrefs.SetInt("CompletedWater1", 0);
+        PlayerPrefs.SetInt("CompletedWater2", 0);
+        PlayerPrefs.SetInt("CompletedLight1", 0);
+        PlayerPrefs.SetInt("CompletedLight2", 0);
     }
 
     public void GameStart(){

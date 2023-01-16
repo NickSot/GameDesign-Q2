@@ -84,10 +84,10 @@ public class WaterDistributionCheck : MonoBehaviour
             PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 5));
             if (PlayerPrefs.GetInt("Water") == 1) 
             {
-                PlayerPrefs.SetInt("CompletedWater", 1);
+                PlayerPrefs.SetInt("CompletedWater1", 1);
             } else if (PlayerPrefs.GetInt("Water") == 2)
             {
-                PlayerPrefs.SetInt("CompletedWater", 2);
+                PlayerPrefs.SetInt("CompletedWater2", 2);
             }
             nextLevel.SetActive(true);
             submit.SetActive(false);

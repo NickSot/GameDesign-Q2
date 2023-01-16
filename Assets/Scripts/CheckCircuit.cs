@@ -83,10 +83,10 @@ public class CheckCircuit : MonoBehaviour
             PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 3));
             if (PlayerPrefs.GetInt("Light") == 1) 
             {
-                PlayerPrefs.SetInt("CompletedLight", 1);
+                PlayerPrefs.SetInt("CompletedLight1", 1);
             } else if (PlayerPrefs.GetInt("Light") == 2)
             {
-                PlayerPrefs.SetInt("CompletedLight", 2);
+                PlayerPrefs.SetInt("CompletedLight2", 2);
             }
             bulb.GetComponent<SpriteRenderer>().color = Color.green;
             nextLevel.SetActive(true);
