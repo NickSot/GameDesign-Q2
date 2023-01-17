@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.22352941, g: 1, b: 0.23137255, a: 1}
-  inactiveColor: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
+  inactiveColor: {r: 0.9716981, g: 0.051946055, b: 0.051946055, a: 1}
   currentValue: 0
   connectedInputPort: {fileID: 0}
 --- !u!58 &6309684191482823277

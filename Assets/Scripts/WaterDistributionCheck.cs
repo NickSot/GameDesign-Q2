@@ -14,7 +14,8 @@ public class WaterDistributionCheck : MonoBehaviour
     public GameObject redo;
     public GameObject submit;
     public GameObject Exit;
-    
+    public GameObject congrats;
+
     void Start()
     {
         nextLevel.SetActive(false);
@@ -70,6 +71,7 @@ public class WaterDistributionCheck : MonoBehaviour
     {
         Mode.testing = false;
         SceneManager.LoadScene("CityOverview");
+        PlayerPrefs.SetInt("Loaded", 1);
     }
 
     public void Redo()
@@ -83,6 +85,7 @@ public class WaterDistributionCheck : MonoBehaviour
         Debug.Log(testW);
         if (testW == 8)
         {
+            congrats.SetActive(true);
             PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 5));
             if (PlayerPrefs.GetInt("Water") == 1) 
             {
@@ -105,5 +108,6 @@ public class WaterDistributionCheck : MonoBehaviour
     {
         Mode.testing = false;
         SceneManager.LoadScene("CityOverview");
+        PlayerPrefs.SetInt("Loaded", 1);
     }
 }

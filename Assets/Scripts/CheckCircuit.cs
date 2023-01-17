@@ -18,6 +18,7 @@ public class CheckCircuit : MonoBehaviour
     public GameObject redo;
     public GameObject submit;
     public GameObject Exit;
+    public GameObject congrats;
     void Start()
     {
         bulb.GetComponent<SpriteRenderer>().color = Color.red;
@@ -68,6 +69,7 @@ public class CheckCircuit : MonoBehaviour
     {
         Mode.testing = false;
         SceneManager.LoadScene("CityOverview");
+        PlayerPrefs.SetInt("Loaded", 1);
     }
 
     public void Redo()
@@ -81,6 +83,7 @@ public class CheckCircuit : MonoBehaviour
         Debug.Log(testLight);
         if (testLight == 4)
         {
+            congrats.SetActive(true);
             PlayerPrefs.SetFloat("Completed", (PlayerPrefs.GetFloat("Completed") + 3));
             if (PlayerPrefs.GetInt("Light") == 1) 
             {
@@ -104,5 +107,6 @@ public class CheckCircuit : MonoBehaviour
     {
         Mode.testing = false;
         SceneManager.LoadScene("CityOverview");
+        PlayerPrefs.SetInt("Loaded", 1);
     }
 }

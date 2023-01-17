@@ -11,7 +11,7 @@ public class StartGame : MonoBehaviour
         {
         PlayerPrefs.SetFloat("", 0);
         }
-
+        PlayerPrefs.SetInt("Loaded", 0);
         PlayerPrefs.SetFloat("Completed", 0);
         PlayerPrefs.SetInt("CompletedWater1", 0);
         PlayerPrefs.SetInt("CompletedWater2", 0);
