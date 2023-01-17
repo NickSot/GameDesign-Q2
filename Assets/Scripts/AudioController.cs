@@ -4,25 +4,46 @@ using UnityEngine;
 
 public class AudioController: MonoBehaviour
 {
-      private static AudioController instance = null;
-      private AudioSource audio;
+    private static AudioController instance = null;
+    public AudioSource audio;
+    public AudioSource audio1;
+    public AudioSource audio2;
 
-      private void Awake()
-      {
-          if (instance == null)
-          { 
-               instance = this;
-               DontDestroyOnLoad(gameObject);
-               return;
-          }
-          
-          if (instance == this) return; 
-          Destroy(gameObject);
-      }
+    private int audioSource = 1;
 
-      void Start()
-      {
-         audio = GetComponent<AudioSource>();
-         audio.Play();
-      }
+    private void Awake()
+    {
+        if (instance == null)
+        { 
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        
+        if (instance == this) return; 
+        Destroy(gameObject);
+    }
+
+    void LateUpdate() {
+        if (!audio.isPlaying && !audio1.isPlaying && !audio2.isPlaying) {
+            switch (audioSource) {
+                case 0:
+                    audio.Play();
+                    break;
+                case 1:
+                    audio1.Play();
+                    break;
+                case 2:
+                    audio2.Play();
+                    break;
+            }
+
+            audioSource = (audioSource + 1) % 3;
+        }
+    }
+
+    void Start()
+    {
+        
+    }
 }
