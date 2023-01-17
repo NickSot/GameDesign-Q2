@@ -12,7 +12,8 @@ public class ORTutorialCheck : MonoBehaviour
     public Output output;
     public GameObject redo;
     public GameObject submit;
-    
+    public GameObject congrats;
+
     void Start()
     {
         nextLevel.SetActive(false);
@@ -67,6 +68,7 @@ public class ORTutorialCheck : MonoBehaviour
         Debug.Log(testOr);
         if (testOr == 4)
         {
+            congrats.SetActive(true);
             nextLevel.SetActive(true);
             submit.SetActive(false);
             PlayerPrefs.SetFloat("", 3);

@@ -12,7 +12,8 @@ public class ANDTutorialCheck : MonoBehaviour
     public Output output;
     public GameObject redo;
     public GameObject submit;
-    
+    public GameObject congrats;
+
     void Start()
     {
         nextLevel.SetActive(false);
@@ -67,6 +68,7 @@ public class ANDTutorialCheck : MonoBehaviour
         Debug.Log(testAnd);
         if (testAnd == 4)
         {
+            congrats.SetActive(true);
             nextLevel.SetActive(true);
             submit.SetActive(false);
             PlayerPrefs.SetFloat("", 2);

@@ -11,7 +11,7 @@ public class NotTutorialCheck : MonoBehaviour
     private int testNot = 0;
     public Output output;
     public GameObject redo;
-    
+    public GameObject congrats;
     void Start()
     {
         nextLevel.SetActive(false);
@@ -63,6 +63,7 @@ public class NotTutorialCheck : MonoBehaviour
         Debug.Log(testNot);
         if (testNot == 2)
         {
+            congrats.SetActive(true);
             nextLevel.SetActive(true);
             submit.SetActive(false);
             PlayerPrefs.SetFloat("", 1);
