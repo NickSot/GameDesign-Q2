@@ -410,10 +410,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 85
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 8
+    m_MinSize: 0
     m_MaxSize: 85
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -421,7 +421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name of Our Game
+  m_Text: Save our Community - TU/e
 --- !u!222 &149480417
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -864,12 +864,12 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Welcome! Complete the tutorials to unlock the NOT, AND & OR gate. Once
     you are finished, get started on your mission to save our community. In each
-    level you will find an Info button where COMPANION NAME will provide you with
-    the required information to complete each level. Good Luck!
+    level you will find an Info button where RoboTUe will provide you with the required
+    information to complete each level. Good Luck!
 
 
-    To close the
-    Information, click on the INFO button. '
+    To close the Information,
+    click on the INFO button. '
 --- !u!222 &612042456
 CanvasRenderer:
   m_ObjectHideFlags: 0
