@@ -27,9 +27,9 @@ public class NotTutorialCheck : MonoBehaviour
     {
         Mode.testing = true;
         
-        StartCoroutine(TestNot(0, 1, 0.0f));
-        StartCoroutine(TestNot(1, 0, 0.1f));
-        Invoke("method", 0.4f);
+        StartCoroutine(TestNot(0, 1, 0f));
+        StartCoroutine(TestNot(1, 0, 0.5f));
+        Invoke("method", 1f);
     }
     private IEnumerator TestNot(int input_1, int exp_Output, float time)
     {
@@ -37,7 +37,7 @@ public class NotTutorialCheck : MonoBehaviour
 
         inputNode.setValue(input_1);
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
 
         Debug.Log("Test: " + outputValue);
 

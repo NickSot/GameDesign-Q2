@@ -1467,6 +1467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5943451539902045862, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5943451539902045864, guid: fc66f0ff102882b478a056757f054e2e, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
@@ -2352,6 +2356,10 @@ PrefabInstance:
     - target: {fileID: 7784539556708340992, guid: b255101b6f1fa674988891b85c435d9b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784539556708340993, guid: b255101b6f1fa674988891b85c435d9b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784539556708340996, guid: b255101b6f1fa674988891b85c435d9b, type: 3}
       propertyPath: m_Name

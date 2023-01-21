@@ -30,10 +30,10 @@ public class ANDTutorialCheck : MonoBehaviour
         Mode.testing = true;
         
         StartCoroutine(testAND(0, 0, 0, 0.0f));
-        StartCoroutine(testAND(0, 1, 0, 0.1f));
-        StartCoroutine(testAND(1, 0, 0, 0.2f));
-        StartCoroutine(testAND(1, 1, 1, 0.3f));
-        Invoke("method", 0.4f);
+        StartCoroutine(testAND(0, 1, 0, 0.5f));
+        StartCoroutine(testAND(1, 0, 0, 1f));
+        StartCoroutine(testAND(1, 1, 1, 1.5f));
+        Invoke("method", 2f);
     }
     private IEnumerator testAND(int input_1, int input_2, int exp_Output, float time)
     {
@@ -42,7 +42,7 @@ public class ANDTutorialCheck : MonoBehaviour
         inputNode.setValue(input_1);
         inputNode2.setValue(input_2);
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
 
         Debug.Log("Test: " + outputValue);
 

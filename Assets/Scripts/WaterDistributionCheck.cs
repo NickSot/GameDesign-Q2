@@ -39,15 +39,15 @@ public class WaterDistributionCheck : MonoBehaviour
         Mode.testing = true;
         
         StartCoroutine(testWater(0, 0, 0, 0, 0.0f));
-        StartCoroutine(testWater(0, 0, 1, 1, 0.1f));
-        StartCoroutine(testWater(0, 1, 0, 0, 0.2f));
-        StartCoroutine(testWater(0, 1, 1, 0, 0.3f));
-        StartCoroutine(testWater(1, 0, 0, 0, 0.4f));
-        StartCoroutine(testWater(1, 0, 1, 1, 0.5f));
-        StartCoroutine(testWater(1, 1, 0, 1, 0.6f));
-        StartCoroutine(testWater(1, 1, 1, 1, 0.7f));
+        StartCoroutine(testWater(0, 0, 1, 1, 0.5f));
+        StartCoroutine(testWater(0, 1, 0, 0, 1f));
+        StartCoroutine(testWater(0, 1, 1, 0, 1.5f));
+        StartCoroutine(testWater(1, 0, 0, 0, 2f));
+        StartCoroutine(testWater(1, 0, 1, 1, 2.5f));
+        StartCoroutine(testWater(1, 1, 0, 1, 3f));
+        StartCoroutine(testWater(1, 1, 1, 1, 3.5f));
         
-        Invoke("method", 0.8f);
+        Invoke("method", 4f);
     }
     private IEnumerator testWater(int input_1, int input_2, int input_3, int exp_Output, float time)
     {
@@ -57,7 +57,7 @@ public class WaterDistributionCheck : MonoBehaviour
         inputNode2.setValue(input_2);
         inputNode3.setValue(input_3);
         
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
 
         Debug.Log("Test: " + outputValue);
 
